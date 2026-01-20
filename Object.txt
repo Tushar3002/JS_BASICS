@@ -1,0 +1,109 @@
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  language: "EN"
+};
+
+// Create new Object
+const man = Object.create(person);
+man.firstName = "Peter";
+
+// Display Properties
+document.getElementById("demo").innerHTML = person.firstName + " and " + man.firstName; //John Peter
+
+
+
+The Object.defineProperties() method adds or changes object properties.
+The Object.defineProperties() method lets you change property metadata.
+The Object.defineProperties() method lets you add getters and setters.
+
+const person = {
+  firstName: "John",
+  lastName: "Doe"
+};
+
+Object.defineProperties(person, {
+  language: {value: "en"},
+  year: {value: "Hello"}
+});
+
+
+The Object.defineProperty() method adds or changes an object property.
+The Object.defineProperty() method lets you change property metadata.
+
+/ Create an Object:
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  language: "EN"
+};
+
+// Add a new Property
+Object.defineProperty(person, "year", {value:"2008"})
+
+
+The delete operator deletes a property from an object:
+The delete operator deletes both the value of the property and the property itself.
+
+delete person.lastName
+
+
+The Object.entries() method returns an array of the key/value pairs of an object.
+
+const person = {
+  firstName : "John",
+  lastName : "Doe",
+  age : 50,
+  eyeColor : "blue"
+};
+
+let text = Object.entries(person);   returns an array of the key/value pairs of an object.
+
+
+
+The Object.freeze() method prevents any changes to an object.
+The Object.freeze() method will fail silently in non-strict mode.
+The Object.freeze() method will throw a TypeError in strict mode.
+Frozen objects are read-only. No modification, addition or deletion of properties are allowed.
+
+"use strict"
+// Create Object
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 50,
+  eyeColor: "blue"
+};
+// Freeze Object
+Object.freeze(person)
+
+// This will throw an error
+person.age = 51;
+
+isFrozen 
+let text = Object.isFrozen(person);  //true
+
+
+
+Object.freeze and Object.seal()
+
+Feature	            Object.seal()	    Object.freeze()
+Add properties	      ❌	                ❌
+Delete properties	    ❌	                ❌
+Modify values	        ✅	                ❌
+
+
+
+////////////.keys()
+// Create an Object
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 50,
+  eyeColor: "blue"
+};
+
+// Get the Keys
+const keys = Object.keys(person);  firstName,lastName,age,eyeColor
+
+

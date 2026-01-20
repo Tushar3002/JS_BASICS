@@ -1,0 +1,109 @@
+// Create a Map
+const fruits = new Map([
+  ["apples", 500],
+  ["bananas", 300],
+  ["oranges", 200]
+]);
+--------------------- OR --------------------------
+// Create a Map
+const fruits = new Map();
+
+// Set Map Values
+fruits.set("apples", 500);
+fruits.set("bananas", 300);
+fruits.set("oranges", 200);
+
+
+// Clear fruits
+fruits.clear();   // yhis will empty the fruits map
+
+// Delete an Element
+fruits.delete("apples"); //delete apple key and it svalue
+
+
+The entries() method returns an iterator object with the [key,values] in a map.
+The entries() method does not change the original map.
+
+// Create a Map
+const fruits = new Map([
+  ["apples", 500],
+  ["bananas", 300],
+  ["oranges", 200]
+]);
+
+// List all Entries
+let text = "";
+for (const x of fruits.entries()) {
+  text += x;
+}
+
+Output : 
+apples,500
+bananas,300
+oranges,200
+
+
+
+The forEach() method invokes a function for each map element:
+The forEach() method does not change the original map.
+
+const fruits = new Map([
+  ["apples", 500],
+  ["bananas", 300],
+  ["oranges", 200]
+]);
+
+// List all Entries
+let text = "";
+fruits.forEach (function(value, key) {
+  text += key + ' = ' + value;
+})
+
+apples = 500
+bananas = 300
+oranges = 200
+
+
+The get() method gets the value of a key in a map.
+
+let value = fruits.get("apples"); //500
+
+
+
+The keys() method returns an iterator object with the keys in a map:
+The keys() method does not change the original met.
+
+// List all Keys
+let text = "";
+for (const x of fruits.keys()) {
+  text += x;
+}
+
+
+The set() method adds an element to a map.
+The set() method updates an element in a map.
+
+const fruits = new Map();
+
+// Set Map Values
+fruits.set("apples", 500);
+fruits.set("bananas", 300);
+fruits.set("oranges", 200);
+
+
+The has() method returns true if a key exists in a map.
+fruits.has("apples");
+
+
+The size property returns the number of elements in a map.
+
+fruits.size
+
+
+The values() method returns an iterator object with the values in a map.
+The values() method does not change the original map.
+
+let text = "";
+for (const x of fruits.values()) {
+  text += x;
+}

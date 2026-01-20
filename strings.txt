@@ -1,0 +1,177 @@
+The at() method returns an indexed character from a string.
+The at() method returns the same as [].
+
+
+let text = "W3Schools";
+let character = text.at(0);  or text[0]  ////.at() is new and accept negative
+
+he charAt() method returns the character at a specified index (position) in a string.
+The index of the first character is 0, the second 1, ...
+
+let character = text.charAt(0);   // its old and doesnt accept negative valeu 
+
+The charCodeAt() method returns the Unicode of the character at a specified index (position) in a string.
+The index of the first character is 0, the second is 1, ....
+The index of the last character is string length - 1 (See Examples below).
+
+let text = "HELLO WORLD";   
+let code = text.charCodeAt(0); //72  give the unicode 
+
+The codePointAt() method returns the Unicode value at an index (position) in a string.
+The index of the first position is 0, the second is 1, ....
+
+charCodeAt() vs codePointAt()
+charCodeAt() is UTF-16, codePointAt() is Unicode.
+charCodeAt() returns a number between 0 and 65535.
+Both methods return an integer representing the UTF-16 code of a character, but only codePointAt() can return the full value of a Unicode value greather 0xFFFF (65535).
+
+The concat() method joins two or more strings.
+The concat() method does not change the existing strings.
+The concat() method returns a new string.
+
+let result = text1.concat(" ", text2);
+
+let result = text1.concat(" ", text2, " ", text3);
+
+
+The endsWith() method returns true if a string ends with a specified string.
+let text = "Hello world";
+let result = text.endsWith("world");
+
+
+The String.fromCharCode() method converts Unicode values to characters.
+The String.fromCharCode() is a static method of the String object.
+The syntax is always String.fromCharCode().
+You cannot use myString.fromCharCode().
+
+
+let text = String.fromCharCode(72, 69, 76, 76, 79); //HELLO
+
+
+The includes() method returns true if a string contains a specified string.
+Otherwise it returns false.
+The includes() method is case sensitive.
+let result = text.includes("world");
+
+The indexOf() method returns the position of the first occurrence of a value in a string.
+The indexOf() method returns -1 if the value is not found.
+let text = "Hello world, welcome to the universe.";
+let result = text.indexOf("welcome"); //13
+
+let text = "Hello world, welcome to the universe.";
+text.indexOf("e", 5);14
+
+let text = "Hello World \uD800";
+let result = text.isWellFormed(); //false
+
+The lastIndexOf() method returns the index (position) of the last occurrence of a specified value in a string.
+The lastIndexOf() method searches the string from the end to the beginning.
+The lastIndexOf() method returns the index from the beginning (position 0).
+
+let text = "Hello planet earth, you are a great planet.";
+let result = text.lastIndexOf("planet"); //34
+
+let length = text.length; //12
+
+The localeCompare() method compares two strings in the current locale.
+The localeCompare() method returns sort order -1, 1, or 0 (for before, after, or equal).
+
+The match() method matches a string against a regular expression **
+The match() method returns an array with the matches.
+
+text.match(/ain/);
+
+
+/////  padEnd()  The padEnd() method pads a string at the end.
+let text = "5";
+document.getElementById("demo").innerHTML = text.padEnd(4,"x");
+
+let padded = text.padStart(4,"0");
+
+
+
+The repeat() method returns a string with a number of copies of a string.
+The repeat() method returns a new string.
+
+let result = text.repeat(4);
+
+
+The replace() method searches a string for a value or a regular expression.
+The replace() method returns a new string with the value(s) replaced.
+The replace() method does not change the original string.
+
+let text = "Visit Microsoft!";
+let result = text.replace("Microsoft", "W3Schools");
+
+
+The replaceAll() method searches a string for a value or a regular expression.
+The replaceAll() method returns a new string with all values replaced.
+The replaceAll() method does not change the original string.
+
+text = text.replaceAll("Cats","Dogs");
+text = text.replaceAll("cats","dogs");
+
+The search() method matches a string against a regular expression **
+The search() method returns the index (position) of the first match.
+The search() method returns -1 if no match is found.
+
+let position = text.search(/Blue/);
+
+
+The slice() method extracts a part of a string.
+The slice() method returns the extracted part in a new string.
+The slice() method does not change the original string.
+
+string.slice(start, end)
+let text = "Hello world!";
+let result = text.slice(0, 5); //Hello
+
+let result = text.slice(3); //lo world!
+
+
+The split() method splits a string into an array of substrings.
+The split() method returns the new array.
+The split() method does not change the original string.
+
+let text = "How are you doing today?";
+const myArray = text.split(" "); //['How', 'are', 'you', 'doing', 'today?']
+
+const myArray = text.split(""); //H,o,w,...
+
+const myArray = text.split(" ", 3); How,are,you
+
+
+The substr() method extracts a part of a string.    ❌depreciated ans it uses length as 2nd para
+The substr() method begins at a specified position, and returns a specified number of characters.
+The substr() method does not change the original string.
+
+let text = "Hello world!";
+let result = text.substr(1, 4); //ello
+
+let result = text.substr(2); //llo world!
+
+The substring() method extracts characters, between two indices (positions), from a string, and returns the substring.
+The substring() method extracts characters from start to end (exclusive).
+The substring() method does not change the original string.
+If start is greater than end, arguments are swapped: (4, 1) = (1, 4).
+
+Key differences: slice() vs substring()
+Feature	                            slice()	    substring()
+Supports negative indexes	           ✅	    ❌ (negative → 0)
+Swaps start & end if start > end	   ❌	    ✅ (automatic)
+End index is exclusive	               ✅	    ✅
+Start index can be omitted	           ✅	    ✅
+Preferred in modern JS	               ✅	Less common
+
+
+let result = text.toLowerCase();
+let result = text.toUpperCase();
+
+
+The trim() method removes whitespace from both sides of a string.
+The trim() method does not change the original string.
+
+trimEnd()  trimStart()
+
+Good Evening,
+So Today I have been going through the notes i have created on JS and revising it again. I would love to know that if i should continue revising JS or there anything specific to do.

@@ -1,0 +1,168 @@
+The Promise Object represents the completion or failure of an asynchronous operation and its results.
+
+A Promise can have 3 states:
+
+pending	    initial state
+rejected	operation failed
+fulfilled	operation completed
+
+
+Promise Object Methods & Properties
+Revised December 2025
+Name	Description
+catch()	Provides a function to be called when a promise is rejected
+                The catch() method provides a callback.
+                The callback is a function to run when a promise is rejected.
+
+finally()	Provides a function to be called when a promise is fulfilled or rejected
+                The finally() method provides a callback.
+                The callback is a function to run when a promise is settled (fulfilled or rejected).
+
+then()	Provide two functions to be called when a promise is fulfilled or rejected
+
+Static Methods
+Promise.all()	Returns a single Promise from a list of promises
+                When all promises fulfill
+
+What it does
+✅ Resolves only if ALL promises resolve
+❌ Rejects immediately if any one promise rejects
+⛔ Stops caring about remaining results after rejection
+
+                // Create a Promise
+                const myPromise1 = new Promise((resolve, reject) => {
+                setTimeout(resolve, 200, "King");
+                });
+
+                // Create another Promise
+                const myPromise2 = new Promise((resolve, reject) => {
+                setTimeout(resolve, 100, "Queen");
+                });
+
+                // Both resolve, who is faster?
+                Promise.all([myPromise1, myPromise2]).then((x) => {
+                myDisplay(x);
+                });//King,Queen
+
+
+Promise.allSettled()    returns a single Promise that
+                        resolves after all input promises have settled (either fulfilled or rejected),
+                        with an array describing the outcome of each promise.
+
+What it does
+✅ Waits for ALL promises to finish
+❌ Never rejects
+✔️ Gives status of each promise
+
+                const myPromise1 = new Promise((resolve, reject) => {
+                setTimeout(resolve, 200, "King");
+                });
+
+                // Create another Promise
+                const myPromise2 = new Promise((resolve, reject) => {
+                setTimeout(resolve, 100, "Queen");
+                });
+
+                // Run when All promises are settled
+                Promise.allSettled([myPromise1, myPromise2]).then((results) =>
+                results.forEach((x) => myDisplay(x.status)),
+                ); ///  fulfilledfulfilled
+
+
+Promise.any()	Returns a single Promise from a list of promises
+                When any promise fulfills
+
+                const myPromise1 = new Promise((resolve, reject) => {
+                setTimeout(resolve, 200, "King");
+                });
+
+                // Create another Promise
+                const myPromise2 = new Promise((resolve, reject) => {
+                setTimeout(resolve, 100, "Queen");
+                });
+
+                // Run when Any promise fulfills
+                Promise.any([myPromise1, myPromise2]).then((x) => {
+                myDisplay(x);
+                });  ///queen
+
+Promise.race()	Returns a single Promise from a list of promises
+                When the faster promise settles
+                    Promise.race([myPromise1, myPromise2]).then((x) => {
+                    myDisplay(x);
+                    });
+
+Promise.reject()	Returns a Promise object rejected with a value
+Promise.resolve()	Returns a Promise object resolved with a value
+Promise.then()	Provides two callbacks:
+                One funtion to run when a promise is fulfilled.
+                One funtion to run when a promise is rejected.
+Promise.try()	Executes a function and wraps its result in a promise.
+Promise.withResolvers()	Returns an object containing a new Promise object and two functions to resolve or reject it.
+
+
+1. new Promise(...) → Creating a promise
+
+Use this syntax when you want to manually create a new Promise and define what it does (resolve or reject).
+
+Syntax
+const myPromise = new Promise((resolve, reject) => {
+  // async task
+  if (success) {
+    resolve(result);
+  } else {
+    reject(error);
+  }
+});
+
+Example
+const myPromise = new Promise((resolve, reject) => {
+  setTimeout(() => resolve("Done!"), 1000);
+});
+
+
+Here, you control when it resolves or rejects.
+
+This is how you “wrap” async code in a Promise.
+
+2. Promise.any(), Promise.all(), Promise.allSettled(), Promise.race() → Using static methods
+
+These are already built-in functions on the Promise class.
+
+You don’t use new with them.
+
+You pass an array of promises (already created or returned by functions) to them.
+
+Example
+const p1 = new Promise(resolve => setTimeout(resolve, 200, "A"));
+const p2 = new Promise(resolve => setTimeout(resolve, 100, "B"));
+
+Promise.any([p1, p2])
+  .then(result => console.log(result)); // "B"
+
+
+Here:
+
+new Promise(...) → creates the individual promises
+
+Promise.any([...]) → combines them
+
+✅ Quick Rule of Thumb
+Task	                                        Syntax to use
+Create a promise manually	                new Promise((resolve, reject) => {...})
+Combine or act on multiple promises	        Promise.all(...), Promise.any(...), etc.
+Wrap an async function	                    Just call the function that returns a promise, no new needed
+
+Example putting both together
+// Step 1: Create promises
+const promise1 = new Promise(resolve => setTimeout(resolve, 300, "One"));
+const promise2 = new Promise(resolve => setTimeout(resolve, 100, "Two"));
+
+// Step 2: Combine promises
+Promise.any([promise1, promise2])
+  .then(result => console.log(result)); // "Two"
+
+
+new Promise() → defines each async operation
+
+Promise.any() → waits for the first successful one

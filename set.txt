@@ -1,0 +1,74 @@
+const letters = new Set(["a","b","c"]);
+
+const letters = new Set();
+
+// Add values to the Set
+letters.add("b");
+letters.add("b");
+letters.add("c");
+letters.add("c");
+letters.add("c");
+letters.add("a");
+letters.add("c");
+letters.add("c");
+
+// Display set.size
+document.getElementById("demo").innerHTML = "The set has " +[...letters] + " values.";  //The set has a,b,c values.
+
+
+//Clear
+letters.clear()
+
+// Remove one Element
+letters.delete("a");
+
+----------------------------------------------
+he difference() method returns the difference between two sets.
+The difference() method returns a new set containing elements which are in this set but not in the argument set:
+
+const A = new Set(['a','b','c']);
+const B = new Set(['b','c','d']);
+
+const C = A.difference(B);
+
+let text = "";
+for (const x of C) {
+  text += x;
+} // A
+
+The intersection() method returns the intersection of two sets.
+
+The isDisjointFrom() method returns true if no elements in this set are elements in the argument set:
+
+The isSubsetOf() method returns true if all elements in this set are elements in the argument set:
+
+he isSupersetOf() method returns true if all elements in the argument set are also in this set:
+
+The symmetricDifference() method returns the symmetric difference between two sets.
+The symmetricDifference() method returns a new set containing elements which are in this set or in the argument set, but not in both:
+
+The union() method returns the union of two sets.
+The union() method returns a new set containing the elements which are in this set, or in the argument set, or in both.
+
+
+
+The entries() method returns an Iterator with [value,value] pairs from a set.
+const myIterator = letters.entries();
+
+// List all Entries
+let text = "";
+for (const entry of myIterator) {
+  text += entry;
+}
+
+The forEach() method invokes a function for each set element:
+The forEach() method does not change the original set.
+
+// List all entries
+let text = "";
+letters.forEach (function(value) {
+  text += value;
+})
+
+The has() method returns true if a specified value exists in a set.
+
