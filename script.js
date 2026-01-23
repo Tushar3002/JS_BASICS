@@ -398,20 +398,53 @@ const fruits = [
 // a.id=123
 // console.log(typeof undefined);
 // let a=10
-let arr=[1,2]
-let arr2=[1,2]
+// let arr=[1,2]
+// let arr2=[1,2]
 
-console.log(arr==arr2);
+// console.log(arr==arr2);
 
-// arr.map((x)=>{
+// // arr.map((x)=>{
 
-// })
-let obj={
-  a:10
+// // })
+// let obj={
+//   a:10
+// }
+
+// let obj2=obj
+
+// obj2.a=20
+
+// console.log(obj.a);
+
+
+// function outer(){
+//   console.log(arguments);
+// }
+
+// outer("Tushar","J")
+
+
+// const obj={
+//   name:"Tushar",
+//   city:"Rajkot",
+//   print(){
+//     console.log(this);
+    
+//   }
+// }
+
+// obj.print()
+
+const obj = {
+  name: 'deeecode',
+  age: 200,
+  print: function() {
+    function print2() {
+      console.log(this)
+    }
+
+    print2()
+  }
 }
 
-let obj2=obj
-
-obj2.a=20
-
-console.log(obj.a);
+obj.print()

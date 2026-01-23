@@ -328,7 +328,7 @@
 //     const data = await res.json();
 //     console.log(data);
 // };
-// fetchData(); // called here
+// fetchData(); 
 // `;
 
 // (async () => {

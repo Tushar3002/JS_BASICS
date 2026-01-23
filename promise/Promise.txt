@@ -86,6 +86,8 @@ Promise.any()	Returns a single Promise from a list of promises
                 myDisplay(x);
                 });  ///queen
 
+                //if all promise return reject then it will give a aggregated error
+
 Promise.race()	Returns a single Promise from a list of promises
                 When the faster promise settles
                     Promise.race([myPromise1, myPromise2]).then((x) => {
