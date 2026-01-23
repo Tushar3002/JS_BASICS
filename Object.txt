@@ -11,7 +11,10 @@ man.firstName = "Peter";
 // Display Properties
 document.getElementById("demo").innerHTML = person.firstName + " and " + man.firstName; //John Peter
 
+The hasOwnProperty() method in JavaScript checks if an object has a specific property as its own (not inherited). It returns true if the property exists directly on the object, otherwise false, making it useful for distinguishing own properties from inherited ones.
 
+Syntax
+object.hasOwnProperty( prop );
 
 The Object.defineProperties() method adds or changes object properties.
 The Object.defineProperties() method lets you change property metadata.

@@ -63,18 +63,56 @@
 // console.log(ans);
 
 
-// accept first letter of string as parameter and coveet the first letter to uppercase
+// ----------------------------accept first letter of string as parameter and coveet the first letter to uppercase
 
-function firstUpper(str){
+// function firstUpper(str){
 
-    let ans=str.split(" ").map((x)=>{
+//     let ans=str.split(" ").map((x)=>{
         
-    let first= x[0].toUpperCase()
-    let val=first.concat(x.slice(1))
-       
-        return val
-    }).join(" ")
-    console.log(ans);
-}
+//     let first= x[0].toUpperCase()
+//     let val=first.concat(x.slice(1))
+//     // let val=x[0].toUpperCase() + x.substring(1)
+//     return val
+//     }).join(" ")
+//     console.log(ans);
+// }
 
-firstUpper("My name is Tushar")
+// firstUpper("My name is Tushar")
+
+
+
+//-------count the occurance of each letters 
+
+
+// function occurance(x){
+
+//     const m=new Map();
+//     x.split("").map((val)=>{
+//         if(val===" ") return;
+//         if (m.has(val)) {
+//             m.set(val, m.get(val) + 1);
+//         } else {
+//             m.set(val, 1);
+//         }
+//     })
+//     return m;
+// }
+
+// function occurance2(x){
+//     let obj={}
+//     x.split("").forEach((val)=>{
+//         if(val===" ") return;
+//         if(obj.hasOwnProperty(val)){
+//             obj[val]++ 
+//         }else{
+//             obj[val]=1
+//         }
+//     })
+//     return obj;
+// }
+
+
+// console.log(occurance("Jana  Tushar"));
+// console.log(occurance2("Jana  Tushar"));
+
+//////// 
