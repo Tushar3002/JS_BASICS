@@ -29,7 +29,7 @@
 //     console.log("Tushar");   
 // }
 
-// a()  //here  Tushar will print first then the waiting promise after 5 second
+// a()  //here  """Tushar will print first""" then the waiting promise after 5 second
 
 
 // async function b(){
@@ -38,10 +38,10 @@
     
 //     console.log(val)  //here it will wait and print done and val together after 5sec
    
-//     // const val1=await p1
-//     //  console.log(val)
-//     // console.log("done");
-//     // console.log(val1);
+    // const val1=await p1
+    //  console.log(val)
+    // console.log("done");
+    // console.log(val1);
     
 // }   
 

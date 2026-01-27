@@ -103,7 +103,6 @@ The replace() method does not change the original string.
 let text = "Visit Microsoft!";
 let result = text.replace("Microsoft", "W3Schools");
 
-
 The replaceAll() method searches a string for a value or a regular expression.
 The replaceAll() method returns a new string with all values replaced.
 The replaceAll() method does not change the original string.

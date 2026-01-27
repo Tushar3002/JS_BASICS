@@ -1,4 +1,4 @@
-//repeat
+//----------------------------------------repeat
 
 // let arr=[1,2,3]
 
@@ -11,7 +11,7 @@
 
 
 
-// count values of an array
+// ------------------------------------count values of an array
 
 
 // let arr =[1,2,3,4,"abcd",5.5]
@@ -19,7 +19,9 @@
 // let ans= arr.reduce((x,y)=>{
 //     return x+y
 // }) 
-/// OR 
+// /// OR 
+// console.log(ans);
+
 
 
 // let sum=0
@@ -116,53 +118,53 @@
 
 /////////FUNCTION TO FIND THE MOST FREQUENT OCCURANCE
 
-function occur(a){
-    let m=new Map()
-    a.forEach((x)=>{
-        if(m.has(x)){
-            m.set(x,m.get(x)+1)
-        }else{
-            m.set(x,1)
-        }
-    })
-    return m
-}
+// function occur(a){
+//     let m=new Map()
+//     a.forEach((x)=>{
+//         if(m.has(x)){
+//             m.set(x,m.get(x)+1)
+//         }else{
+//             m.set(x,1)
+//         }
+//     })
+//     return m
+// }
 
-console.log(occur([4,5,8,1,1,1,2,3,4]));
-
-
-//SHUFFLE AN ARRAY
-
-function shuffleArray(a){
-    let n=a.length
-
-    while(n>0){
-        n--
-        let randomVal=Math.floor(Math.random() * n)
-        // let temp=a[n]
-        // a[n]=a[randomVal]
-        // a[randomVal]=temp
+// console.log(occur([4,5,8,1,1,1,2,3,4]));
 
 
-    }
-    return a
-}
+// //SHUFFLE AN ARRAY
 
-console.log(shuffleArray([1,2,3,4,5,6]));
+// function shuffleArray(a){
+//     let n=a.length
+
+//     while(n>0){
+//         n--
+//         let randomVal=Math.floor(Math.random() * n)
+//         // let temp=a[n]
+//         // a[n]=a[randomVal]
+//         // a[randomVal]=temp
+
+
+//     }
+//     return a
+// }
+
+// console.log(shuffleArray([1,2,3,4,5,6]));
 
 
 
-function union(a1,a2){
-    return [...new Set(a1.concat(a2))]
-}
+// function union(a1,a2){
+//     return [...new Set(a1.concat(a2))]
+// }
  
 
-console.log(union([1,2,3,4,5],[3,4,5,6,7]) );
+// console.log(union([1,2,3,4,5],[3,4,5,6,7]) );
 
 
-function combine(x,y){
-    console.log(x+y);
-    return x.concat(y)
+// function combine(x,y){
+//     console.log(x+y);
+//     return x.concat(y)
     
-}
-console.log(combine([1,2,3],[2,3,3]));
+// }
+// console.log(combine([1,2,3],[2,3,3]));

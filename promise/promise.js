@@ -1,6 +1,6 @@
 
 
-let data="ass"
+let data="assi"
 
 
 
@@ -76,7 +76,7 @@ createOrder(cart)
     return showOrderSummary(message, amt);
   })
   .then(function({ message, amt }) {
-    console.log('Your wallet has beed debited by:', amt);
+    console.log(message, amt);
   })
   .catch(function(err) {
     console.log(err.message);
@@ -121,7 +121,7 @@ function showOrderSummary(paymentInfo, amt) {
   return new Promise(function(resolve, reject) {
     // console.log(amt);
     if (amt >= 2000) {
-      resolve({ message: 'You have ordered items that cost ${amt} RS', amt });
+      resolve({ message: `You have ordered items that cost ${amt} RS`, amt });
     } else {
       reject(new Error('Please buy more for discount'));
     }

@@ -55,7 +55,7 @@ What it does
 ✔️ Gives status of each promise
 
                 const myPromise1 = new Promise((resolve, reject) => {
-                setTimeout(resolve, 200, "King");
+                  setTimeout(resolve, 200, "King");
                 });
 
                 // Create another Promise
