@@ -1,3 +1,6 @@
+let d = new Date();
+
+
 // //Current date & time
 // let now = new Date();
 // console.log(now);   //Tue Jan 27 2026 18:35:27 GMT+0530 (India Standard Time)
@@ -28,24 +31,27 @@
 // console.log(d.getDay());
 
 
-let d = new Date();
+
 // d.toString();      // Full readable string //Tue Jan 27 2026 18:53:02 GMT+0530 (India Standard Time)
 // d.toDateString();  // Only date //Tue Jan 27 2026  
 // d.toTimeString();  // Only time //18:51:20 GMT+0530 (India Standard Time)
 // d.toUTCString();   // UTC format  //Tue, 27 Jan 2026 13:21:41 GMT
 // d.toISOString();   // ISO format (YYYY-MM-DDTHH:mm:ss.sssZ) //2026-01-27T13:22:02.489Z
 
-console.log(d.toUTCString());
+// console.log(d.toUTCString());
 
-// Date.now();            // milliseconds since 1 Jan 1970 //1769520298916
-// let d = new Date();
-// d.getTime();           // same as above
+// // Date.now();            // milliseconds since 1 Jan 1970 //1769520298916
+// // let d = new Date();
+// // d.getTime();           // same as above
 
 
-// let d = new Date();
-console.log(d.setDate(d.getDate() + 5));; // 5 days later
-console.log(d.setDate(d.getDate() - 7)); //milliseconds since 1 Jan 1970 
-console.log(d.toDateString()); // Jan 25 2026
+// // let d = new Date();
+// d.setDate(d.getDate() + 5);
+// console.log(d) // 5 days later
+// d.setDate(d.getDate() - 7); //milliseconds since 1 Jan 1970 
+// console.log(d)
+// d.toDateString(); // Jan 25 2026
+// console.log(d)
 // ; // 7 days earlier
 
 // new Date(
@@ -97,5 +103,24 @@ console.log(d.toDateString()); // Jan 25 2026
 
 //Date.UTC() returns the number of milliseconds between a date and January 1, 1970, according to UTC:
 
-let ms = Date.UTC(2020, 0o2, 30);//1585526400000
-console.log(ms);
+// let ms = Date.UTC(2020, 0o2, 30);//1585526400000
+// console.log(ms);
+
+
+console.log(d);
+
+d.setDate(d.getDate()+16)
+
+console.log(d);
+
+let ans=new Date(2026, 0, 30).setDate(35);
+
+console.log(new Date(ans).toDateString());
+
+
+// or
+let ans1 = new Date(2026, 2, 30);
+ans1.setDate(35);
+
+console.log(ans1.toDateString());
+// 🐍

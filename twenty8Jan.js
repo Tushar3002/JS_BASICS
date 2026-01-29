@@ -34,16 +34,7 @@ const students = [
   {name: "David", grade: "C"}
 ];
 
-// groupBy function
-Map.groupBy = function(array, fn) {
-  const map = new Map();
-  for (const item of array) {
-    const key = fn(item);
-    if (!map.has(key)) map.set(key, []);
-    map.get(key).push(item);
-  }
-  return map;
-};
+
 
 // Group by grade
 const grouped = Map.groupBy(students, s => s.grade);
@@ -83,4 +74,35 @@ const oddEven=Map.groupBy(n,val=>(val%2==0?'even':'odd'))
 for(let [key,values] of oddEven){
     console.log(key + " : " + values);
     
+}
+
+function bark() {
+  console.log('Woof!');
+}
+
+bark.animal = 'dog';
+
+console.log(bark.animal);
+
+
+const fruits = [
+  {name:"apples", quantity:300},
+  {name:"bananas", quantity:500},
+  {name:"oranges", quantity:200},
+  {name:"kiwi", quantity:150}
+];
+
+const res=Map.groupBy(fruits,(val)=>{
+  return val.quantity<300 ? "low":"OK"
+})
+
+console.log(res);
+
+for(let i of res.get("low")){
+  console.log(i);
+}
+console.log("OK");
+
+for(let i of res.get("OK")){
+  console.log(i);
 }
