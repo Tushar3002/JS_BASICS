@@ -124,3 +124,49 @@ ans1.setDate(35);
 
 console.log(ans1.toDateString());
 // 🐍
+
+const date = new Date(2026, 0, 29, 13, 0, 2); // Jan 29, 2026, 13:00:02 local time
+
+console.log("=== Different Date Formats ===\n");
+
+console.log("Local (toString):       ", date.toString());       //Thu Jan 29 2026 13:00:02 GMT+0530 (India Standard Time)
+console.log("ISO (toISOString):      ", date.toISOString());    //2026-01-29T07:30:02.000Z
+console.log("UTC (toUTCString):      ", date.toUTCString());    //Thu, 29 Jan 2026 07:30:02 GMT
+console.log("Locale (default):       ", date.toLocaleString()); //1/29/2026, 1:00:02 PM
+console.log("Locale (India en-IN):   ", date.toLocaleString("en-IN")); //29/1/2026, 1:00:02 pm
+console.log("Date only (toDateString): ", date.toDateString()); //Thu Jan 29 2026
+console.log("Time only (toTimeString): ", date.toTimeString()); //13:00:02 GMT+0530 (India Standard Time)
+console.log("Locale date only (en-IN): ", date.toLocaleDateString("en-IN"));    //29/1/2026
+console.log("Locale time only (en-IN): ", date.toLocaleTimeString("en-IN", { hour12: true }));  //1:00:02 pm
+
+function sayHi() {
+  return (() => 0)();  //The sayHi function returns the returned value of the immediately invoked function expression (IIFE). 
+  // This function returned 0, which is type "number". but without () or IIFE  it returns function
+}
+
+console.log(typeof sayHi());
+
+function abc(){
+    let x,y;
+    {
+        x=1;
+        y=2;
+        console.log(x);
+        
+    }
+    console.log(y);
+    
+}
+
+abc()
+
+var arr=[[0, 1], [2, 3]].reduce(
+  (acc, cur) => {
+    return acc.concat(cur);
+  },
+  [1, 2],
+);
+
+console.log(arr);
+
+

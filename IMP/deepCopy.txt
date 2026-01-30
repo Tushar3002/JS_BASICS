@@ -83,3 +83,10 @@ Serialize object → JSON string
 Deserialize string → new object
 All references broken
 Works only for JSON-safe data
+
+
+
+✅ Key distinction: Mutation vs Reassignment
+Action	Effect on original reference
+person.name = 'Pedro' (mutate)	changes object, both see it
+person = { name: 'Pedro' } (reassign)	points variable to new object, original object untouched

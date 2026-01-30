@@ -58,6 +58,54 @@
 //   hour12: false
 // };
 
-const d = new Date();
-let text = d.toLocaleString();
-console.log(text);
+// const d = new Date();
+// let text = d.toLocaleString();
+// console.log(text);
+
+
+// let person = { name: 'Lydia' };
+// const members = person;
+// // person.name="anb"
+// person = { name: 'Pedro' };
+
+// console.log(members);
+
+// const person1 = {
+//   name: 'Lydia',
+//   age: 21,
+// };
+
+// Object.entries(person1).forEach(([key,v]) => {
+//   console.log("hey");
+//   console.log(key,v);           // "name", "age"
+// });
+
+// for (const [key, value] of Object.entries(person1)) {
+//   console.log(key, value);    // "name" "Lydia", "age" 21
+// }
+
+// const num = parseInt('101',2);
+// console.log(num);
+// function getInfo(member, year) {
+//   member.name = 'Lydia';
+//   year = '1998';
+// }
+
+function getInfo(member, year) {
+  member.name = 'Lydia';
+  year = '1998';
+}
+
+const person = { name: 'Sarah' };
+const birthYear = '1997';
+
+getInfo(person, birthYear);
+
+console.log(person, birthYear);
+
+(() => {
+  let x = y = 10;
+})();
+
+console.log(typeof x);
+console.log(typeof y);
