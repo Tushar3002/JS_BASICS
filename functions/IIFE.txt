@@ -1,0 +1,57 @@
+Self-Invoking Functions
+An IIFE is short for an Immediately Invoked Function Expression.
+
+An IIFE is a function that invokes itself when defined.
+
+When is IIFE Used?
+To create a private scope
+To run setup code once
+In older JavaScript code
+
+Example
+(function () {
+  // Code to run immediately
+})();
+
+Avoid Polluting the Global Scope
+Everything inside an IIFE is private to that function.
+
+Variables inside an IIFE cannot be accessed from outside.
+
+IIFE with Parameters
+You can pass arguments into an IIFE.
+
+Example
+(function (name) {
+  let text = "Hello " + name;
+})("John Doe");
+
+Named Function Expression IIFE
+You can give an IIFE a name:
+
+Example
+(function greet() {
+  let text = "Hello! I called myself.";
+})();
+
+greet(); // ⛔ ReferenceError
+But, the name greet exists only inside the function itself, not in the outer/global scope.
+
+Why use a named IIFE?
+
+For self-recursion functions (calling itself repeatedly):
+
+IIFE as a Module (Private Variables)
+Example
+const counter = (function () {
+  let value = 0;
+  return {
+    increment() { value++; },
+    get() { return value; }
+  };
+})();
+
+counter.increment();
+let x = counter.get();
+
+

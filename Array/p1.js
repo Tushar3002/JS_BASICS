@@ -43,7 +43,6 @@
 //     {name:"Sdff",gender:"non"},
 //     {name:"aaa",gender:"male"},
 //     {name:"nomi",gender:"female"},
-
 // ]
 
 // let ans=arr.filter((x)=>{
@@ -54,7 +53,6 @@
 
 
 ////count non male
-
 
 // var count=0
 // arr.forEach((x)=>{
@@ -82,17 +80,16 @@
 //     return typeof a;
 // }
 // console.log(typeofData(3));
-// console.log(typeofData([11]));
+// console.log(typeofData([11]));//object
 // console.log(typeofData("afs"));
 // console.log(typeofData(true));
-// console.log(typeofData({}));
-// console.log(typeofData(undefined));
-// console.log(typeofData(null));
-// console.log(typeofData(NaN));
-// console.log(typeofData(function(){}));
+// console.log(typeofData({}));//object
+// console.log(typeofData(undefined));//undefined
+// console.log(typeofData(null));//object
+// console.log(typeofData(NaN));//number
+// console.log(typeofData(function(){}));//function
 
 ////function to get the first n elements of an array
-
 
 // function retrieve(a,n=1){
 //     // return a[0]
@@ -104,15 +101,15 @@
 // }
 // retrieve([3,4,5,6],3)
 
-// function lastRetrieve(a,n=1){
-//     // return a[0]
-//     if(n<=a.length){
-//         for(var i=0;i<n;i++){
-//             console.log(a[a.length-1-i])
-//         }
-//     }
-// }
-// lastRetrieve([3,4,5,6],3)
+function lastRetrieve(a,n=1){
+    // return a[0]
+    if(n<=a.length){
+        for(var i=0;i<n;i++){
+            console.log(a[a.length-1-i]) //a.length-n+i
+        }
+    }
+}
+lastRetrieve([3,4,5,6],3)
 
 
 
@@ -162,9 +159,27 @@
 // console.log(union([1,2,3,4,5],[3,4,5,6,7]) );
 
 
-// function combine(x,y){
-//     console.log(x+y);
-//     return x.concat(y)
+function combine(x,y){
+    console.log(x+y);
+    return x.concat(y)
     
+}
+console.log(combine([1,2,3],[2,3,3]));
+
+
+
+// function shuffleArray(arr){
+//     let n=arr.length
+
+//     while(n>0){
+//         n--
+//         let rand=Math.floor(Math.random()*n);
+//         [arr[n], arr[rand]] = [arr[rand], arr[n]];
+
+//     }
+//     return arr
 // }
-// console.log(combine([1,2,3],[2,3,3]));
+
+// console.log(shuffleArray([1,2,3,4,5,6]));
+
+
