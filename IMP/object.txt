@@ -1,0 +1,61 @@
+1️⃣ Object.groupBy()
+Example
+const result = Object.groupBy(fruit1, f =>
+  f.quantity > 210 ? "More" : "Less"
+);
+
+What you get
+{
+  More: [ ... ],
+  Less: [ ... ]
+}
+
+Characteristics
+
+✅ Keys are strings (or symbols)
+✅ Easy to log / JSON.stringify
+✅ Natural for simple data grouping
+❌ No guaranteed insertion order (mostly ordered, but not strict spec for all cases)
+❌ Risk of key collision (__proto__, toString, etc.)
+
+2️⃣ Map.groupBy() (ES2023+)
+Example
+const result = Map.groupBy(fruit1, f =>
+  f.quantity > 210 ? "More" : "Less"
+);
+
+What you get
+Map {
+  "More" => [ ... ],
+  "Less" => [ ... ]
+}
+
+Characteristics
+
+✅ Keys can be ANY type (string, number, object, function…)
+✅ Guaranteed insertion order
+✅ No key collision issues
+✅ Better for large / complex datasets
+❌ Not JSON-serializable directly
+❌ Slightly more verbose to work with
+
+
+3️⃣ Side-by-side comparison
+Feature	                       Object.groupBy	           Map.groupBy
+
+Return                              type	           Plain Object {} Map
+Key types	                String / Symbol only	        Any type
+Order guaranteed	                ❌ (mostly)	            ✅
+JSON friendly	                    ✅	                    ❌
+Performance (large data)	        Good	                Better
+Safe from collisions	            ❌	                    ✅
+
+-----------------------------------------------------------------
+
+2️⃣ How it differs from for...of
+
+Feature	                            for...in	                         for...of
+Works on	                        Objects, Arrays	            Iterables (Array, Map, Set, String)
+Iterates over	                    Keys (property names)	                Values
+Syntax	                            for (key in obj)	            for (value of iterable)
+Can use with objects?	                ✅ Yes	                ❌ No, unless you do Object.keys(obj) etc.
