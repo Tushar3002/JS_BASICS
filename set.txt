@@ -71,4 +71,3 @@ letters.forEach (function(value) {
 })
 
 The has() method returns true if a specified value exists in a set.
-

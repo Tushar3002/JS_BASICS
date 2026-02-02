@@ -171,6 +171,3 @@ The trim() method removes whitespace from both sides of a string.
 The trim() method does not change the original string.
 
 trimEnd()  trimStart()
-
-Good Evening,
-So Today I have been going through the notes i have created on JS and revising it again. I would love to know that if i should continue revising JS or there anything specific to do.

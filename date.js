@@ -16,7 +16,7 @@ let d = new Date();
 // //D) Using timestamp (milliseconds since Jan 1, 1970)
 // let dateFromMs = new Date(1674800000000);
 // console.log(dateFromMs);  //Fri Jan 27 2023 11:43:20 GMT+0530 (India Standard Time)
- 
+
 // let d = new Date();
 
 // d.getFullYear();   // Year: 2026
@@ -105,7 +105,6 @@ let d = new Date();
 
 // let ms = Date.UTC(2020, 0o2, 30);//1585526400000
 // console.log(ms);
-
 
 console.log(d);
 

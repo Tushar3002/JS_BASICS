@@ -50,3 +50,4 @@ arr.forEach((v,i)=>console.log(i,v));
 // Map forEach
 const map = new Map([["x",1],["y",2]]);
 map.forEach((v,k)=>console.log(k,v));
+
