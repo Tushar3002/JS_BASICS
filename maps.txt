@@ -90,7 +90,6 @@ fruits.set("apples", 500);
 fruits.set("bananas", 300);
 fruits.set("oranges", 200);
 
-
 The has() method returns true if a key exists in a map.
 fruits.has("apples");
 

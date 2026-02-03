@@ -50,6 +50,6 @@ console.log(d.getTime()-dob.getTime);
 
 
 
-console.log(d.toISOString().split("T"));
+console.log(d.toISOString().split("T")[1]);
 console.log(d.toUTCString());
-console.log(d.toLocaleString('en-US'))
+console.log(d.toLocaleString('en-IN'),{})

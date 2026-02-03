@@ -160,15 +160,15 @@
 
 // console.log(foo());
 // function foo() { return 1; };
-// const words = ["Functional", "Procedural", "Object-Oriented"];
+const words = ["Functional", "Procedural", "Object-Oriented"];
 
-// const wordsLength = words.map(word => word.length);
+const wordsLength = words.map(word => word.length);
 
-// console.log(wordsLength);
-// const strs = ["I", " ", "am", " ", "Iron", " ", "Man"];
-// const result = strs.reduce((acc, currentStr) => acc + currentStr, "");
+console.log(wordsLength);
+const strs = ["I", " ", "am", " ", "Iron", " ", "Man"];
+const result = strs.reduce((acc, currentStr) => acc + currentStr, "");
 
-// console.log(result);
+console.log(result);
 
 
 const employee = {

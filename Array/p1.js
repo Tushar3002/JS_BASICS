@@ -183,3 +183,11 @@ console.log(combine([1,2,3],[2,3,3]));
 // console.log(shuffleArray([1,2,3,4,5,6]));
 
 
+const user = { name: "Alex", age: 25 };
+
+for (let key in user) {
+  console.log(key, user[key]);
+}
+
+const map = new Map([["x",1],["y",2]]);
+map.forEach((v,k)=>console.log(k,v));

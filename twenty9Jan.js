@@ -109,3 +109,6 @@ console.log(person, birthYear);
 
 console.log(typeof x);
 console.log(typeof y);
+
+
+

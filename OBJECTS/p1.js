@@ -19,7 +19,7 @@
 // }
 // console.log(obj);   //[Function: obj]
 
-// console.log(myName.fullName()); //Tushar undefined
+// console.log(myName.fullName()); //Tushar jana
 
 
 // obj.prototype.changeName=function(name){

@@ -169,3 +169,48 @@ var arr=[[0, 1], [2, 3]].reduce(
 console.log(arr);
 
 
+// ISO Date	"2015-03-25" (The International Standard)
+// Short Date	"03/25/2015"
+// Long Date	"Mar 25 2015" or "25 Mar 2015"
+
+
+const timestamp = Date.now(); //no parameter
+console.log(timestamp); 
+
+const d4 = new Date();
+console.log(d4.getTime()); //will still work without parameter
+
+console.log(Date.parse("2015-03-25"));  //return ms
+
+let ms = Date.UTC(2020, 2, 30); //ms 
+
+const start = new Date("2026-03-11T01:00:00Z"); // UTC
+const end = new Date("2026-03-15T01:00:00Z");
+console.log((end - start) / (1000*60*60*24)); // 24 hours → always correct
+console.log(start);
+
+
+
+const todayD=new Date()
+const dob=new Date("06/17/2003")
+console.log(Math.floor((todayD-dob) / (1000*60*60*24*365.25)));
+
+
+//------------------------------------------------
+const email="tushar@gmail.com"
+
+const res=email.split('@').map((val,i)=>i==0 ? val.at(0) + '*'.repeat(val.length-1):val).join("@")
+console.log(res);
+
+
+
+//Reverse each word not sentence
+
+const name="My name is Tushar Jana"
+const rev=name.split(" ")
+
+
+const space="  Hello TJ   Kem Cho     "
+
+const remSp= space.split(" ").filter(x=>x!=="").join(" ")
+console.log(remSp);

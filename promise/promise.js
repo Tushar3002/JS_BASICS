@@ -1,23 +1,17 @@
 
-
 let data="assi"
-
-
 
 const myProm=sendData(data)
 
 myProm.then((x)=>{
     console.log(x);
     return tushar(!x)
-
 })
 .then((data)=>{
     console.log(data);
-    
 })
 .catch((e)=>{
     console.log(e);
-    
 })
 
 function sendData(data){
@@ -58,7 +52,7 @@ function tushar(data){
 // 10. Always remember to return a value in the promise chain for the next .then to use .
 // 11. If it returns a value => It will be  used as an argument in next function. If it is a promise then the next .then in the promise chain is attached to the promise returned by the current callback function.
 
-// Homework:
+
 
 
 const cart = ['shoes', 'pants', 'kurta'];
