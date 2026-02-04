@@ -8,7 +8,6 @@
 
 // const myName=new obj("Tushar","jana")
 
-
 // console.log(obj.firstname); //undefined
 // console.log(myName); //obj { firstname: 'Tushar', lastname: 'jana' }
 // console.log(myName.firstname);  //Tushar
@@ -120,3 +119,55 @@ for (let y of ans2.Less) {    //let [x,y] of ans2.Less.entries()
 }
 
 console.log(text);
+
+
+// const obj1={ a: 11}
+// console.log(obj1);
+
+// const obj2=Object.create(obj1)
+// console.log(obj2);
+// console.log(obj2.a);
+
+// obj2.a=22
+// console.log(obj2.a);
+
+// console.log(obj2);
+
+// delete obj2.a
+// console.log(obj2)
+
+// console.log(obj2.a);
+// --------------------------------------------
+
+function obj(firstname,lastname){
+    this.firstname=firstname
+    this.lastname=lastname
+}
+const myName=new obj("Tushar","jana")
+
+console.log(obj.firstname); //undefined
+console.log(myName); //obj { firstname: 'Tushar', lastname: 'jana' }
+console.log(myName.firstname);  //Tushar
+
+myName.fullName=function(){
+    return this.firstname + " "+ this.lastname;
+
+}
+console.log(obj);   //[Function: obj]
+
+console.log(myName.fullName()); //Tushar jana
+
+const obj99={
+  firstname:"Tushar",
+  lastname:"Jana"
+}
+
+console.log(obj99);
+
+obj99.fullname=function(){
+  return this.firstname + " "+ this.lastname
+}
+
+console.log(obj99);
+console.log(obj99.fullname());
+

@@ -60,3 +60,16 @@ console.log(...arr);
 console.log([...arr,...arr]);
 
 
+// bad
+function sayHi(name) {
+  return `How are you, ${ name }?`;
+}
+
+// good
+function sayHi2(name) {
+  return `How are you, ${name}?`;
+}
+
+console.log(sayHi("Tushar"));
+
+console.log(sayHi2("Tushar"));

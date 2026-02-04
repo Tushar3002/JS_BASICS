@@ -10,7 +10,6 @@
 // console.log(ans);
 
 
-
 // ------------------------------------count values of an array
 
 

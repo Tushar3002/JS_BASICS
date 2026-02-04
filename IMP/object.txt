@@ -39,7 +39,6 @@ Characteristics
 ❌ Not JSON-serializable directly
 ❌ Slightly more verbose to work with
 
-
 3️⃣ Side-by-side comparison
 Feature	                       Object.groupBy	           Map.groupBy
 
@@ -58,4 +57,14 @@ Feature	                            for...in	                         for...of
 Works on	                        Objects, Arrays	            Iterables (Array, Map, Set, String)
 Iterates over	                    Keys (property names)	                Values
 Syntax	                            for (key in obj)	            for (value of iterable)
-Can use with objects?	                ✅ Yes	                ❌ No, unless you do Object.keys(obj) etc.
+Can use with objects?	                ✅ Yes	                ❌ No, unless you do Object.keys(obj) etc.  
+
+const obj = {
+  name: "Pedro",
+  age: 48,
+  job: "Actor"
+}
+
+for (const key in obj) {
+  console.log(key, obj[key])
+}

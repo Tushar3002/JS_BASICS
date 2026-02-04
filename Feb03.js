@@ -1,8 +1,9 @@
 //Capitalize first and last
 
-const str="tushar jana"
+const str="Tushar Jana"
 
-const ans=str.split(" ").map(val=>val.at(0).toUpperCase())
+const ans=str.split(" ").map(val=>val.at(0).toUpperCase()+val.slice(1,-1)+val.at(-1).toUpperCase())
+
 console.log(ans)
 
 
@@ -69,8 +70,29 @@ function RepeatingChar(str){
 }
 
 console.log(RepeatingChar(str));
+const d=new Date()
+console.log(`${d.getHours()}:${d.getMinutes()}`);
 
 
 
+for(let i=0;i<5;i++){
+  let row=''
+  for(let j=0;j<5;j++){
+    row += '*'
+  }
+  console.log(row)
+}
+
+for (let i = 0; i < 5; i++) {
+  console.log('*'.repeat(5))
+}
+let n=5
+for (let i = 0; i < n; i++) {
+  console.log('*'.repeat(n-i))
+}
+
+for (let i = 0; i < n; i++) {
+  console.log('*'.repeat(i+1))
+}
 
 

@@ -101,6 +101,7 @@ with()	Returns a new array with updated elements
 Complete String Reference
 Revised July 2025
 Name	Description
+
 at()	Returns an indexed character from a string
 charAt()	Returns the character at a specified index (position)
 charCodeAt()	Returns the Unicode of the character at a specified index
