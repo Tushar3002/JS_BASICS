@@ -1,7 +1,13 @@
-CHEATSHEET
 
-1️⃣ Selecting Elements
+# jQuery Cheat Sheet
 
+A quick reference guide to **jQuery selectors, DOM manipulation, events, effects, AJAX, and utilities**.
+
+---
+
+## 1️⃣ Selecting Elements
+
+```javascript
 // By ID
 $('#myId')
 
@@ -24,13 +30,16 @@ $('li:eq(2)')
 
 // Contains text
 $('p:contains("Hello")')
+````
 
+---
 
-2️⃣ DOM Manipulation
+## 2️⃣ DOM Manipulation
 
+```javascript
 // Get / Set HTML
-$('#myDiv').html()        // get
-$('#myDiv').html('<p>Hi</p>') // set
+$('#myDiv').html()                  // get
+$('#myDiv').html('<p>Hi</p>')      // set
 
 // Get / Set text
 $('#myDiv').text()
@@ -45,17 +54,20 @@ $('#myDiv').append('<span>End</span>')
 $('#myDiv').prepend('<span>Start</span>')
 
 // Remove elements
-$('#myDiv').remove()       // removes from DOM
-$('#myDiv').empty()        // removes children only
+$('#myDiv').remove()   // removes from DOM
+$('#myDiv').empty()    // removes children only
 
 // Add / Remove / Toggle classes
 $('#myDiv').addClass('active')
 $('#myDiv').removeClass('active')
 $('#myDiv').toggleClass('active')
+```
 
+---
 
-3️⃣ CSS & Attributes
+## 3️⃣ CSS & Attributes
 
+```javascript
 // Get / Set CSS
 $('#myDiv').css('color')
 $('#myDiv').css('color', 'red')
@@ -70,10 +82,13 @@ $('#myImg').removeAttr('alt')
 
 // Enable / Disable
 $('#btn').prop('disabled', true)
+```
 
+---
 
-4️⃣ Events
+## 4️⃣ Events
 
+```javascript
 // Click / Hover
 $('#btn').click(function(){ ... })
 $('#btn').hover(function(){ ... })
@@ -95,10 +110,13 @@ $('#myDiv').on('mouseenter mouseleave', fn)
 
 // Remove events
 $('#myDiv').off('click')
+```
 
+---
 
-5️⃣ Effects / Animations
+## 5️⃣ Effects / Animations
 
+```javascript
 // Show / hide
 $('#myDiv').show()
 $('#myDiv').hide()
@@ -116,25 +134,31 @@ $('#myDiv').slideToggle(400)
 
 // Custom animation
 $('#myDiv').animate({ left: '100px', opacity: 0.5 }, 1000)
+```
 
+---
 
-6️⃣ Traversing the DOM
+## 6️⃣ Traversing the DOM
 
+```javascript
 $('#myDiv').children()      // all children
 $('#myDiv').parent()        // parent
 $('#myDiv').parents()       // all ancestors
 $('#myDiv').siblings()      // siblings
-$('#myDiv').next()           // next element
-$('#myDiv').prev()           // previous element
+$('#myDiv').next()          // next element
+$('#myDiv').prev()          // previous element
 
 // Filter
 $('li').first()
 $('li').last()
 $('li').eq(2)   // 0-based index
+```
 
+---
 
-7️⃣ AJAX & Fetch
+## 7️⃣ AJAX & Fetch
 
+```javascript
 // Load HTML
 $('#result').load('data.html')
 
@@ -156,10 +180,13 @@ $.ajax({
     success: function(res){ console.log(res) },
     error: function(err){ console.log(err) }
 })
+```
 
+---
 
-8️⃣ Utilities
+## 8️⃣ Utilities
 
+```javascript
 // Iterate
 $.each([1,2,3], function(index, value){ console.log(index, value) })
 $.each({a:1,b:2}, function(key, value){ console.log(key, value) })
@@ -175,23 +202,25 @@ $.extend({a:1}, {b:2}) // {a:1,b:2}
 
 // Trim string
 $.trim('  hello  ') // 'hello'
+```
 
+---
 
-9️⃣ Chaining
+## 9️⃣ Chaining
 
+```javascript
 $('#myDiv')
   .css('color','red')
   .slideUp(500)
   .slideDown(500)
   .html('Updated')
+```
 
+---
 
-10️⃣ Misc / Tips
+## 🔟 Misc / Tips
 
-Use $(function(){ ... }) or $(document).ready(fn) to run code when DOM is loaded
-
-$ is shorthand for jQuery
-
-$(selector) always returns a jQuery object (even if 0 elements)
-
-Convert to vanilla DOM element: $('#myDiv')[0]
+* Use `$(function(){ ... })` or `$(document).ready(fn)` to run code when DOM is loaded
+* `$` is shorthand for jQuery
+* `$(selector)` always returns a jQuery object (even if 0 elements)
+* Convert to vanilla DOM element: `$('#myDiv')[0]`
