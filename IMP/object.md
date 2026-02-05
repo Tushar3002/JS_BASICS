@@ -30,7 +30,7 @@ const result = Object.groupBy(fruit1, f =>
 
 ### 2️⃣ Map.groupBy() (ES2023+)
 
-**Example:**
+**Example     :**
 
 ```javascript
 const result = Map.groupBy(fruit1, f =>
