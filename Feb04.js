@@ -113,11 +113,3 @@ console.log(palindrome("madam"));
 console.log(palindrome("A man,a plan,a canal, Panama"));
 
 
-//factorial
-
-function factorial(n){
-    return n.toString().split().reduce((acc,cur)=>acc>0? acc*--acc:acc,n)
-}
-console.log(factorial(5));
-
-
