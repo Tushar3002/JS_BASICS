@@ -155,3 +155,19 @@ setInterval(countdown, 1000);
 * Use **static methods** for timestamps or parsing.
 * For **timezones and formatting**, use **`toLocale…`** or libraries like **Moment.js / Luxon / Day.js**.
 * Always handle **months (0-indexed)** and **timezones** carefully.
+
+
+
+console.log(
+  date.toLocaleString('en-US', {
+    timeZone: 'America/Los_Angeles',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: false
+  })
+);
+// "12/06/1995, 19:24:30"

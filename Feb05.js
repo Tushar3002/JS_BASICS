@@ -103,3 +103,9 @@ let text1 = JSON.stringify(person);
 console.log(text1);
 
 
+
+console.log(x);
+          // Display x in the element
+x = 5; // Assign 5 to x
+var x; // Declare x
+
