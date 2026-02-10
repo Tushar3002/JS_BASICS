@@ -5,7 +5,7 @@ console.log(str.match(/cat/));  //cat
 
 
 str="age: 25"
-console.log(str.match(/\d/g));  //2,5
+console.log(str.match(/\d+/g));  //2,5
 
 str="123 11 1"
 console.log(str.match(/\d{3}/g));   //123

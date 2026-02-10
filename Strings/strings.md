@@ -74,7 +74,6 @@ text.charCodeAt(0); // 72
 let result = text1.concat(" ", text2);
 let result = text1.concat(" ", text2, " ", text3);
 ```
-
 ---
 
 ## Searching & Checking
@@ -131,7 +130,6 @@ text.lastIndexOf("planet"); // 34
 ```javascript
 text.search(/Blue/); // -1
 ```
-
 ---
 
 ### `match()`

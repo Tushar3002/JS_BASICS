@@ -104,8 +104,8 @@ let day = d.getDate();   // Day of the month
 
 | Feature             | call            | apply     | bind            |
 | ------------------- | --------------- | --------- | --------------- |
-| Invokes immediately | ✅               | ✅         | ❌               |
-| Returns a function  | ❌               | ❌         | ✅               |
+| Invokes immediately | ✅              | ✅       | ❌              |
+| Returns a function  | ❌              | ❌       | ✅              |
 | Arguments style     | Comma-separated | Array     | Comma-separated |
 | `this` binding      | Temporary       | Temporary | Permanent       |
 
@@ -199,8 +199,6 @@ printInfo.apply(name2, ["OSaka", "GUJ"]);       // Tushar undefined OSaka GUJ
 let printMyName = printInfo.bind(name1, "Rajkot");
 printMyName(); // TJ Rajkot Rajkot undefined
 ```
-
----
 
 ### Other Function Notes
 

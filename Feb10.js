@@ -107,14 +107,14 @@ const users = [
 // console.log(map2);
 
 
-//Find the last duplicate user
+//Find the first duplicate user
 
 // let set2=new Set()
 // let data2=null
 // for (const user of users) {
 //   if (set2.has(user.id)) {
 //     data2 = user;
-//     break; // stop at the first duplicate
+//     break; 
 //   }
 //   set2.add(user.id);
 // }
@@ -164,7 +164,20 @@ const users = [
 // console.log(mostRepeatedUser);
 // console.log(freq);
 
+//===================
 
+// const result = users.reduce((acc, cur) => {
+//     // 1️⃣ count frequencies
+//     acc.freq[cur.id] = (acc.freq[cur.id] || 0) + 1;
+
+//     // 2️⃣ check if current user is the most repeated
+//     if (acc.freq[cur.id] > acc.maxCount) {
+//         acc.maxCount = acc.freq[cur.id];
+//         acc.mostRepeatedUser = cur;
+//     }
+
+//     return acc;
+// }, { freq: {}, maxCount: 0, mostRepeatedUser: null });
 
 
 

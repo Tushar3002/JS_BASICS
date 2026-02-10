@@ -11,11 +11,11 @@ A **Promise** represents the **eventual completion or failure** of an asynchrono
 
 A Promise can be in **one of three states**:
 
-| State      | Description |
+| State     | Description |
 |-----------|-------------|
 | `pending` | Initial state (neither fulfilled nor rejected) |
-| `fulfilled` | Operation completed successfully |
-| `rejected` | Operation failed |
+|`fulfilled`| Operation completed successfully |
+| `rejected`| Operation failed |
 
 ---
 
@@ -31,7 +31,7 @@ promise.then(
   result => console.log(result),
   error => console.log(error)
 );
-````
+
 
 ---
 
@@ -205,6 +205,7 @@ const myPromise = new Promise((resolve, reject) => {
 ---
 
 ## Combining Promises (Static Methods)
+
 
 Static methods work on **existing promises**.
 

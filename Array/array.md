@@ -121,26 +121,20 @@ fruits.fill("Kiwi", 2, 4);    // ["Banana", "Orange", "Kiwi", "Kiwi"]
 
 * Creates a new array with elements passing a test.
 
-```javascript
 const ages = [32, 33, 16, 40];
 const result = ages.filter(e => e > 32); // [33, 40]
-```
 
----
 
 ## `find()` and `findIndex()`
 
 * `find()` → Returns the **first value** passing a test.
 * `findIndex()` → Returns the **index** of the first passing element.
 
-```javascript
 ages.find(checkAge);      // 32
 ages.findIndex(checkAge); // 0
-```
 
 * `findLast()` → Returns **last value** passing a test.
 
----
 
 ## `flat()` and `flatMap()`
 
@@ -295,13 +289,4 @@ const updatedArr = fruits.with(2,"Pineapple"); // returns new array, updates ind
 
 ```javascript
 fruits.toString(); // "Banana,Orange,Apple,Mango"
-```
-
-```
-
----
-
-If you want, I can **combine both your Object and Array notes into a single fully-formatted `JavaScript-Notes.md`** file, ready to download, so you have all your MERN/JS notes in one place.  
-
-Do you want me to do that?
 ```

@@ -81,13 +81,13 @@
 
 // const permission=["read","write","delete"]
 
-// const product=[
-//   {name:"TJ",price:100},
-//   {name:"cup",price:30}
-// ]
+const product=[
+  {name:"TJ",price:100},
+  {name:"cup",price:30}
+]
 
-// const m=product.flatMap((x)=> x.name)
-// console.log(m);
+const m=product.map((x)=> x.name)
+console.log(m);
 
 
 // const ans=product.sort((x,y)=>{

@@ -1,8 +1,4 @@
-Absolutely — this is one of those **“why does JS even have this?”** topics, and once it clicks, it really clicks.
 
-I’ll keep it practical and not academic.
-
----
 
 ## 1️⃣ “Normal objects” (object literals)
 

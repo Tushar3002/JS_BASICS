@@ -188,25 +188,18 @@ let m=new Map()
 
 // })
 
-function norm(users){
-    const it=users.keys()
-    const users2=users
-    
-    const res=users.filter((x,index)=> {
+function norm(users) {
+    const seen = new Set();
 
-        x.forEach(val=>{
-            let ans=val.id
-            console.log(val);
-            
-        })
-
-    })
-    
-    return res;
+    return users.filter(user => {
+        if (seen.has(user.id)) return false;
+        seen.add(user.id);
+        return true;
+    });
 }
 
-
 console.log(norm(users));
+
 
 
 function mapP(x){
@@ -232,17 +225,15 @@ function mapP(x){
 }
 console.log(mapP(users));
 
-function setP(users){
-    const s=new Set()
-    const ans=[new Set(users)]
-    users.forEach(val=>{
-        s.add(val.name)
-    })
-    return ans
+function setP(users) {
+    const s = new Set();
+
+    users.forEach(user => s.add(user.name));
+
+    return s;
 }
 
 console.log(setP(users));
-
 
 
 

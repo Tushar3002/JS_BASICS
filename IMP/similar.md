@@ -115,16 +115,3 @@ JavaScript **reuses method names** when the *behavior conceptually matches*:
 * collection → `forEach`, `entries`, `keys`
 * size → `length`, `size`
 
----
-
-## 🔑 Interview one-liner
-
-> “Some JS methods are shared across types because they operate on **iterable or collection-like behavior**.”
-
-If you want, I can also give:
-
-* 🔥 **tricky interview questions**
-* 🧪 **polyfills**
-* 🧩 **methods that look same but behave differently**
-
-Just tell me 👌

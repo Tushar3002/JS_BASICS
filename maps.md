@@ -1,8 +1,4 @@
 
-# JavaScript Map
-
----
-
 ## What is a Map?
 
 A **Map** is a collection of key–value pairs where:

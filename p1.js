@@ -6,7 +6,6 @@
 // let b = [1,2,3];
 // let c = a;
 
-
 // console.log(a === b); // logs false even though they have the same property
 // console.log(a === c); //true
 // console.log("--------------------------------");
@@ -167,6 +166,8 @@ const wordsLength = words.map(word => word.length);
 console.log(wordsLength);
 const strs = ["I", " ", "am", " ", "Iron", " ", "Man"];
 const result = strs.reduce((acc, currentStr) => acc + currentStr, "");
+const ans=strs.join("")
+console.log(ans);
 
 console.log(result);
 

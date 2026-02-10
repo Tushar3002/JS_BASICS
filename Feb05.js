@@ -50,7 +50,7 @@ console.log(sod(12345));
 
 
 
-//remove duplicate from an array
+//remove cate from an array
 
 
 // =============================================

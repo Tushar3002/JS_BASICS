@@ -1,8 +1,6 @@
 
 # JavaScript Complete Reference
-**Revised July 2025**
 
----
 
 ## 🔹 Set Methods & Properties
 
@@ -24,12 +22,7 @@
 | `symmetricDifference()`    | Returns the symmetric difference between two sets                           |
 | `union()`                  | Returns the union of two sets                                               |
 | `values()`                 | Returns an Iterator with the values in a set                                |
-
-**Property:**
-
-| Property | Description                       |
-|----------|-----------------------------------|
-| `size`   | Returns the number of elements in a Set |
+| `size`                     | Returns the number of elements in a Set                                     |
 
 ---
 
@@ -121,7 +114,7 @@
 | `isWellFormed()`       | Returns true if string is well-formed                                        |
 | `lastIndexOf()`        | Returns index of last occurrence                                            |
 | `length`               | Returns string length                                                       |
-| `localeCompare()`      | Compares two strings in current locale                                      |
+| `localeCompare()`      | Compares two strings in current locale                                          |
 | `match()`              | Searches string using regex or value                                        |
 | `matchAll()`           | Returns all matches                                                         |
 | `padEnd()`             | Pads string at the end                                                      |

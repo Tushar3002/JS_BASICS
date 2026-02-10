@@ -151,7 +151,6 @@ console.log(myName.firstname);  //Tushar
 
 myName.fullName=function(){
     return this.firstname + " "+ this.lastname;
-
 }
 console.log(obj);   //[Function: obj]
 
@@ -170,4 +169,6 @@ obj99.fullname=function(){
 
 console.log(obj99);
 console.log(obj99.fullname());
+
+
 

@@ -54,7 +54,8 @@ const person = {
 Object.defineProperties(person, {
   language: { value: "en" },
   year: { value: "Hello" }
-});
+}
+);
 ```
 
 ---
@@ -100,7 +101,7 @@ const person = {
   eyeColor: "blue"
 };
 
-let text = Object.entries(person); 
+let text = Object.entries(person);
 // [["firstName","John"],["lastName","Doe"],["age",50],["eyeColor","blue"]]
 ```
 

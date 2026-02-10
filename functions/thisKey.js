@@ -12,8 +12,7 @@ stud1.printN() //{ name: 'TJ', printN: [Function: printN] }
 const stud2={
     name:"TJ",
     printN: ()=>{
-        console.log(this);
-        
+        console.log(this); 
     }
 }
 
@@ -55,9 +54,7 @@ const stud5={
             console.log(this);
         }
         printN2()
-    }
-        
-    
+    } 
 }
 
 stud5.printN() //global

@@ -37,7 +37,7 @@ console.log(ans3);
 // 7. Capitalize first letter of every word
 
 let str3="tushar jana from india"
-let ans4=str3.split(" ").map(x=>x.charAt(0).toUpperCase()+x.slice(1)).join(" ")
+let ans4=str3.split(" ").map(x=>x.at(0).toUpperCase()+x.slice(1)).join(" ")
 console.log(ans4)
 
 // 8. Check palindrome
@@ -250,3 +250,8 @@ console.log(titleCase);
 
 const d=new Date(2024);
 console.log(d);
+
+for(let i=0;i<2.9;i++){
+    console.log(i);
+    
+}

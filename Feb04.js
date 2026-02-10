@@ -105,6 +105,8 @@ console.log(countOccurance3("mississippi","I"));
 
 function palindrome(s){
     s=s.toLowerCase().replace(/\W/g,"")
+    console.log(s);
+    
     return s==s.split("").reverse().join("")
 }
 
