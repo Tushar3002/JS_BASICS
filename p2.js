@@ -6,13 +6,11 @@ const users = [
   { id: 2, name: "Neha" }    // duplicate
 ];
 
-
 let ans=users.filter((user,index)=>{
     return users.findIndex(u=>u.id===user.id)===index
 })
 
 console.log(ans);
-
 
 //Map
 
@@ -44,7 +42,7 @@ for(let i of users){
     if(!s1.has(i.id)){
         s1.add(i.id)
         arr.push(i)
-    } 
+    }
 }
 
 console.log(arr);

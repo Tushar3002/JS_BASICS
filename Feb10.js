@@ -87,12 +87,12 @@ const users = [
 // const findUser=users.find(v=> v.id===3 )
 // console.log(findUser);
 
-// //Check if user with id = 4 exists
+// // //Check if user with id = 4 exists
 
 // const exists = users.some(v => v.id === 4);
 // console.log(exists);
 
-// //Count how many times each id appears
+// // //Count how many times each id appears
 
 // let map2=new Map()
 
@@ -170,7 +170,7 @@ const users = [
 //     // 1️⃣ count frequencies
 //     acc.freq[cur.id] = (acc.freq[cur.id] || 0) + 1;
 
-//     // 2️⃣ check if current user is the most repeated
+//     // 2️⃣ check if current user is the most repeated  
 //     if (acc.freq[cur.id] > acc.maxCount) {
 //         acc.maxCount = acc.freq[cur.id];
 //         acc.mostRepeatedUser = cur;
@@ -206,10 +206,10 @@ const users = [
 
 // // Group products by category
 
-// ans=Object.groupBy(products,(val)=>{
-//     return val.category;
-// })
-// console.log(ans);
+// // ans=Object.groupBy(products,(val)=>{
+// //     return val.category;
+// // })
+// // console.log(ans);
 
 // const productsByCategory = products.reduce((acc, product) => {
 //   if (!acc[product.category]) acc[product.category] = [];
@@ -222,13 +222,16 @@ const users = [
 
 // // Find the most expensive product
 
-// ans=products.reduce((acc,cur)=>cur.price>acc?cur.price:acc,0)
+// ans=products.reduce((acc,cur)=>cur.price>acc?cur:acc,0) 
 // console.log(ans);
 
 
 // // Calculate total price of Electronics
 
-// ans=products.filter(val=>val.category==="Electronics").reduce((sum,cur)=>sum + cur.price,0)
+// // ans=products.filter(val=>val.category==="Electronics").reduce((sum,cur)=>sum + cur.price,0)
+// ans=products.reduce((acc,cur)=>{
+//     return cur.category==="Electronics"?acc+cur.price:acc
+// },0)
 // console.log(ans);
 
 
@@ -322,7 +325,7 @@ const users = [
 // }
 // console.log(m2);
 
-// // //  Orders Array
+// //  Orders Array
 // const orders = [
 //   { orderId: 101, customer: "Alice", amount: 250, status: "Delivered" },
 //   { orderId: 102, customer: "Bob", amount: 450, status: "Pending" },
@@ -332,6 +335,11 @@ const users = [
 
 // // // Total amount spent by each customer
 
+// ans=orders.reduce((acc,cur)=>{
+//     acc[cur.customer]=(acc[cur.customer]||0)+cur.amount
+//     return acc;
+// },{})
+// console.log(ans);
 
 
 // // // Filter only delivered orders
@@ -409,197 +417,199 @@ const users = [
 
 // --------------
 
-const employees = [
-  { id: 1, name: "John", department: "HR" },
-  { id: 2, name: "Jane", department: "IT" },
-  { id: 3, name: "John", department: "Finance" },
-  { id: 4, name: "Alice", department: "IT" },
-  { id: 2, name: "Jane", department: "IT" }
-];
-// Problems to try:
+// const employees = [
+//   { id: 1, name: "John", department: "HR" },
+//   { id: 2, name: "Jane", department: "IT" },
+//   { id: 3, name: "John", department: "Finance" },
+//   { id: 4, name: "Alice", department: "IT" },
+//   { id: 2, name: "Jane", department: "IT" }
+// ];
+// // Problems to try:
 
-// Find all unique employees by id (keep first).
+// // Find all unique employees by id (keep first).
 
-const s=new Set()
+// const s=new Set()
 
-ans=employees.filter(val=>{
-    if(s.has(val.id)) return false
-    s.add(val.id)
-    return true
-})
-console.log(ans);
+// ans=employees.filter(val=>{
+//     if(s.has(val.id)) return false
+//     s.add(val.id)
+//     return true
+// })
+// console.log(ans);
 
-// Count how many employees are in each department.
+// // Count how many employees are in each department.
 
-const countDept=employees.reduce((acc,curr)=>{
-    acc[curr.department]=(acc[curr.department]||0)+1
-    return acc
-},{})
-console.log(countDept);
-
-
-// List all unique names.
-
-ans=[...new Set(employees.map(x=>x.name))]
-console.log(ans);
+// const countDept=employees.reduce((acc,curr)=>{
+//     acc[curr.department]=(acc[curr.department]||0)+1
+//     return acc
+// },{})
+// console.log(countDept);
 
 
-// Find first duplicate employee by id.
+// // List all unique names.
 
-let dupl=null
-let s3=new Set()
-
-for(let i in employees){
-    if(s.has(i.id)){
-        dupl=employees.name
-        break;
-    }
-    s.add(i.id)
-}
-
-console.log(dupl);
+// ans=[...new Set(employees.map(x=>x.name))]
+// console.log(ans);
 
 
+// // Find first duplicate employee by id.
 
-// 2️⃣ Inventory Array
-const inventory = [
-  { sku: "A101", name: "Chair", quantity: 10 },
-  { sku: "A102", name: "Table", quantity: 5 },
-  { sku: "A101", name: "Chair", quantity: 8 },
-  { sku: "A103", name: "Lamp", quantity: 15 }
-];
+// let dupl=null
+// let s3=new Set()
 
-// Merge items with the same SKU, summing their quantities.
+// for(let i of employees){
+//     if(s.has(i.id)){
+//         dupl=i.name
+//         break;
+//     }
+//     s.add(i.id)
+// }
 
-const mergedInventory = Object.values(
-  inventory.reduce((acc, item) => {
-    if (acc[item.sku]) {
-      acc[item.sku].quantity += item.quantity;
-    } else {
-      acc[item.sku] = { ...item };
-    }
-    return acc;
-  }, {})
-);
-
-console.log(mergedInventory);
-
-
-// Find items with quantity < 10.
-
-ans=inventory.filter(v=>v.quantity<10)
-console.log(ans);
-
-
-// Get an array of all SKUs.
-
-ans=inventory.map(x=>x.sku)
-console.log(ans);
-
-
-// Find the item with the highest quantity.
-
-ans=mergedInventory.reduce((acc,curr)=>{
-    return curr.quantity>acc.quantity?curr:acc
-    },mergedInventory[0])
-console.log(ans);
+// console.log(dupl);
 
 
 
-// 3️⃣ Customers Array
-const customers = [
-  { id: 1, name: "Tom", city: "New York" },
-  { id: 2, name: "Jerry", city: "Los Angeles" },
-  { id: 3, name: "Spike", city: "New York" },
-  { id: 2, name: "Jerry", city: "Los Angeles" },
-  { id: 4, name: "Tyke", city: "Chicago" }
-];
+// // 2️⃣ Inventory Array
+// const inventory = [
+//   { sku: "A101", name: "Chair", quantity: 10 },
+//   { sku: "A102", name: "Table", quantity: 5 },
+//   { sku: "A101", name: "Chair", quantity: 8 },
+//   { sku: "A103", name: "Lamp", quantity: 15 }
+// ];
 
-// Find all unique customers by id.
+// // Merge items with the same SKU, summing their quantities.
 
-ans=customers.filter((val,index)=>{
-    return customers.findIndex(v=>v.id===val.id)===index
-})
+// const mergedInventory = Object.values(
+//   inventory.reduce((acc, item) => {
+//     if (acc[item.sku]) {
+//       acc[item.sku].quantity += item.quantity;
+//     } else {
+//       acc[item.sku] = { ...item };
+//     }
+//     return acc;
+//   }, {})
+// );
 
-console.log(ans);
-
-
-// Group customers by city.
-
-ans=customers.reduce((acc,cur)=>{
-    if(!acc[cur.city]) acc[cur.city]=[]
-    acc[cur.city].push(cur);
-    return acc
-},{})
-
-console.log(ans);
+// console.log(mergedInventory);
 
 
-// Count how many customers per city.
+// // Find items with quantity < 10.
 
-ans=customers.reduce((acc,cur)=>{
-    acc[cur.city]=(acc[cur.city] || 0) +1
-    return acc;
-},{})
-
-console.log(ans);
-
-// List all unique names.
-
-ans=customers.map(val=>val.name)
-ans=[...new Set(ans)]
-console.log(ans);
+// ans=inventory.filter(v=>v.quantity<10)
+// console.log(ans);
 
 
-// 4️⃣ Transactions Array
-const transactions = [
-  { txId: 1, user: "Alice", amount: 200 },
-  { txId: 2, user: "Bob", amount: 450 },
-  { txId: 3, user: "Alice", amount: 150 },
-  { txId: 4, user: "Charlie", amount: 300 },
-  { txId: 5, user: "Bob", amount: 100 }
-];
+// // Get an array of all SKUs.
 
-// Find total amount per user.
-
-ans=transactions.reduce((acc,cur)=>{
-    acc[cur.user]=(acc[cur.user] || 0)+cur.amount
-    return acc
-},{})
-console.log(ans);
+// ans=inventory.map(x=>x.sku)
+// console.log(ans);
 
 
-// Find users with transactions > 200.
+// // Find the item with the highest quantity.
 
-ans=transactions.filter(x=>x.amount>200)
-console.log(ans);
-
-
-// List unique users.
-
-ans=transactions.map(x=>x.user)
-ans=[...new Set(ans)]
-console.log(ans);
+// ans=mergedInventory.reduce((acc,curr)=>{
+//     return curr.quantity>acc.quantity?curr:acc
+//     },mergedInventory[0])
 
 
-// Find first duplicate transaction by user.
-
-let s4=new Set
-let fDup=null
-for(let i of transactions){
-    if(s4.has(i.user)){ 
-        fDup=i 
-        break;
-    }else{
-        s4.add(i.user)
-    }
-
-}
-
-console.log(fDup);
+// console.log(ans);
 
 
-// 5️⃣ Cars Array
+
+// // 3️⃣ Customers Array
+// const customers = [
+//   { id: 1, name: "Tom", city: "New York" },
+//   { id: 2, name: "Jerry", city: "Los Angeles" },
+//   { id: 3, name: "Spike", city: "New York" },
+//   { id: 2, name: "Jerry", city: "Los Angeles" },
+//   { id: 4, name: "Tyke", city: "Chicago" }
+// ];
+
+// // Find all unique customers by id.
+
+// ans=customers.filter((val,index)=>{
+//     return customers.findIndex(v=>v.id===val.id)===index
+// })
+
+// console.log(ans);
+
+
+// // Group customers by city.
+
+// ans=customers.reduce((acc,cur)=>{
+//     if(!acc[cur.city]) acc[cur.city]=[]
+//     acc[cur.city].push(cur);
+//     return acc
+// },{})
+
+// console.log(ans);
+
+
+// // Count how many customers per city.
+
+// ans=customers.reduce((acc,cur)=>{
+//     acc[cur.city]=(acc[cur.city] || 0) +1
+//     return acc;
+// },{})
+
+// console.log(ans);
+
+// // List all unique names.
+
+// ans=customers.map(val=>val.name)
+// ans=[...new Set(ans)]
+// console.log(ans);
+
+
+// // 4️⃣ Transactions Array
+// const transactions = [
+//   { txId: 1, user: "Alice", amount: 200 },
+//   { txId: 2, user: "Bob", amount: 450 },
+//   { txId: 3, user: "Alice", amount: 150 },
+//   { txId: 4, user: "Charlie", amount: 300 },
+//   { txId: 5, user: "Bob", amount: 100 }
+// ];
+
+// // Find total amount per user.
+
+// ans=transactions.reduce((acc,cur)=>{
+//     acc[cur.user]=(acc[cur.user] || 0)+cur.amount
+//     return acc
+// },{})
+// console.log(ans);
+
+
+// // Find users with transactions > 200.
+
+// ans=transactions.filter(x=>x.amount>200)
+// console.log(ans);
+
+
+// // List unique users.
+
+// ans=transactions.map(x=>x.user)
+// ans=[...new Set(ans)]
+// console.log(ans);
+
+
+// // Find first duplicate transaction by user.
+
+// let s4=new Set
+// let fDup=null
+// for(let i of transactions){
+//     if(s4.has(i.user)){ 
+//         fDup=i 
+//         break;
+//     }else{
+//         s4.add(i.user)
+//     }
+
+// }
+
+// console.log(fDup);
+
+
+// // 5️⃣ Cars Array
 const cars = [
   { id: 1, brand: "Toyota", model: "Camry", year: 2018 },
   { id: 2, brand: "Honda", model: "Civic", year: 2020 },
