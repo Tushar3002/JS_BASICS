@@ -6,62 +6,62 @@ const users = [
   { id: 2, name: "Neha" }    // duplicate
 ];
 
-// const uniq=users.filter((val,index)=>{
-//    return users.findIndex(u=>u.id===val.id)===index;
-// })
+const uniq=users.filter((val,index)=>{
+   return users.findIndex(u=>u.id===val.id)===index;
+})
 
-// console.log(uniq);
+console.log(uniq);
 
-// //SET
-
-
-// const s= new Set()
-
-// const uniq2=users.filter((val,index)=>{
-//     if(s.has(val.id)) return false
-//     s.add(val.id)
-//     return true
-// })
-
-// console.log(uniq2);
-
-// //Map
-// const m=new Map()
-// const uniq3=users.filter((val,index)=>{
-//     if(m.has(val.id)){
-//         return false
-//     }
-//     m.set(val.id,val.name)
-//     return true
-// })
-// console.log(uniq3);
+//SET
 
 
-// ////////////////
-// const seen = new Set();
-// const uniq4 = [];
+const s= new Set()
 
-// for (const user of users) {
-//   if (!seen.has(user.id)) {
-//     seen.add(user.id);
-//     uniq4.push(user);
-//   }
-// }
-// console.log(uniq4);
+const uniq2=users.filter((val,index)=>{
+    if(s.has(val.id)) return false
+    s.add(val.id)
+    return true
+})
+
+console.log(uniq2);
+
+//Map
+const m=new Map()
+const uniq3=users.filter((val,index)=>{
+    if(m.has(val.id)){
+        return false
+    }
+    m.set(val.id,val.name)
+    return true
+})
+console.log(uniq3);
+
+
+////////////////
+const seen = new Set();
+const uniq4 = [];
+
+for (const user of users) {
+  if (!seen.has(user.id)) {
+    seen.add(user.id);
+    uniq4.push(user);
+  }
+}
+console.log(uniq4);
 
 
 
-// //////////
+//////////
 
-// const map = new Map();
+const map = new Map();
 
-// for (const user of users) {
-//   map.set(user.id, user); // overwrites previous
-// }
-// console.log(map);
+for (const user of users) {
+  map.set(user.id, user); // overwrites previous
+}
+console.log(map);
 
-// const uniq5 = Array.from(map.values());
-// console.log(uniq5);
+const uniq5 = Array.from(map.values());
+console.log(uniq5);
 
 
 // //------------------------------------------------------------------------------------------

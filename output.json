@@ -1,0 +1,13 @@
+[
+  {
+    "hobby": "reading",
+    "users": [
+      { "id": 1, "name": "Amit", "hobbies": ["reading", "playing"] },
+      { "id": 3, "name": "Amit2", "hobbies": ["reading", "playing"] },
+      { "id": 4, "name": "Rahul", "hobbies": ["singing", "reading"] }
+    ]
+  },
+  {
+    "hobby": "playing"
+  }
+]

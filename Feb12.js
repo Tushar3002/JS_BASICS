@@ -179,146 +179,116 @@ const users2 = [
 
 //Get total revenue (sum of all orders of all users)
 
-// ans=users2.reduce((acc,cur)=>{
-//     return acc + cur.orders.reduce((sum,val)=> sum + val.total,0);
-// },0)
+ans=users2.reduce((acc,cur)=>{
+    return acc + cur.orders.reduce((sum,val)=> sum + val.total,0);
+},0)
 
-// console.log(ans);
-// //1500
+console.log(ans);
+//1500
 
 
 //2️⃣ Most Purchased Product (by quantity)
 
+// ans=users2.
 
 
-const users3 = [
-  { id: 1, name: "Amit",hobbies:["reading","playing"] },
-  { id: 2, name: "Neha",hobbies:["dancing","gaming"] },
-  { id: 3, name: "Amit2",hobbies:["reading","playing"] },   // duplicate
-  { id: 4, name: "Rahul",hobbies:["singing","reading"] },
-  { id: 5, name: "Neha22" ,hobbies:["dancing","playing","singing"]}    // duplicate
-];
+// ✅ 2️⃣ Most Purchased Product (by quantity)
+
+// Step 1: Count products
+// Step 2: Find max
+
+// const productCount = {};
+
+// users.forEach(user => {
+//   user.orders.forEach(order => {
+//     order.items.forEach(item => {
+//       productCount[item.product] =
+//         (productCount[item.product] || 0) + item.quantity;
+//     });
+//   });
+// });
+
+// const mostPurchased = Object.keys(productCount).reduce((max, product) =>
+//   productCount[product] > productCount[max] ? product : max
+// );
+
+// console.log(mostPurchased);
 
 
-let s=new Set()
+// 🔥 This is real interview logic.
+
+// ✅ 3️⃣ User Who Spent the Most
+// const userWithMaxSpending = users.reduce((maxUser, user) => {
+//   const totalSpent = user.orders.reduce((sum, order) => sum + order.total, 0);
+
+//   const maxSpent = maxUser.orders
+//     ? maxUser.orders.reduce((sum, order) => sum + order.total, 0)
+//     : 0;
+
+//   return totalSpent > maxSpent ? user : maxUser;
+// }, users[0]);
+
+// console.log(userWithMaxSpending);
 
 
-users3.forEach((x)=>{
-    x.hobbies.forEach(y=>{
-        s.add(y)
-    })
-})
-let uniqueHobby=Array.from(s)
-console.log(uniqueHobby);
+// 🔥 Alternative cleaner version:
 
-let ans2={};
+// const userWithMaxSpending = users
+//   .map(user => ({
+//     ...user,
+//     totalSpent: user.orders.reduce((sum, o) => sum + o.total, 0)
+//   }))
+//   .reduce((max, user) =>
+//     user.totalSpent > max.totalSpent ? user : max
+//   );
 
-for(let i of uniqueHobby){
-    ans2=users3.reduce((acc,cur)=>{
-        if(!acc[i]) acc[i]=[]
-
-        if(cur.hobbies.includes(i)){
-            acc[i].push(cur)
-            
-        }
-        return acc
-      
-    },ans2)
-    
-}
-
-console.log(ans2);
+// console.log(userWithMaxSpending);
 
 
+// This one is cleaner and more readable.
+
+// ✅ 4️⃣ Flat Array of All Purchased Products
+
+// Using flatMap (cleanest way):
+
+// const allProducts = users.flatMap(user =>
+//   user.orders.flatMap(order =>
+//     order.items.map(item => ({
+//       user: user.name,
+//       product: item.product
+//     }))
+//   )
+// );
+
+// console.log(allProducts);
 
 
-// console.log("--------------------------------------------------------------------------------------");
+// 🔥 This shows strong nested mapping skills.
 
-    
-// let ans33=users3.reduce((acc,cur)=>{
+// ✅ 5️⃣ Product Revenue Summary
 
-//         for (let i = 0; i < uniqueHobby.length; i++) {
-//             if(!acc[uniqueHobby[i]]) acc[uniqueHobby[i]]=[]
-//             if(cur.hobbies.includes(i)){
-//                 acc[uniqueHobby[i]].push(cur)
-//             }
-//         }
-//         return acc
-        
-//     },{})
-//     console.log(ans33);
-    
+// Revenue = price × quantity
 
+// const revenueSummary = {};
 
-//     console.log("--------------------------------------------------------------------------------------");
-    
-// let ans9=users3.reduce((acc,cur)=>{
-//         cur.hobbies.forEach(x=>{
-//             if(!acc[x]) acc[x]=[]
+// users.forEach(user => {
+//   user.orders.forEach(order => {
+//     order.items.forEach(item => {
+//       revenueSummary[item.product] =
+//         (revenueSummary[item.product] || 0) +
+//         item.price * item.quantity;
+//     });
+//   });
+// });
 
-//         acc[x].push(cur)
-        
-//         })
-//         return acc
-//     },{})
-// console.log(ans9);
+// console.log(revenueSummary);
 
 
-// ans2=uniqueHobby.map((x,i)=>{
-//     console.log(x);
-    
-//     let val=users3.reduce((acc,cur)=>{
-        
-//         if(!acc[x]) acc[x]=[]
-//         if(cur.hobbies.includes(x)){
-//             acc[x].push(cur)
-//         }
-//     })
-//     return{
-//         hobby:x,
-//         users:acc[x]
-//     }
-// })
+// Output:
 
-
-
-
-
-
-// let ans2;
-// for(let i=0;i<uniqueHobby.length;i++){
-//     ans2=users3.reduce((acc,cur)=>{
-
-//         if(!acc[uniqueHobby[i]]) acc[uniqueHobby[i]]=[]
-//         acc[uniqueHobby[i]].push(cur)
-//         return acc
-    
-// },{})
+// {
+//   Laptop: 500,
+//   Mouse: 100,
+//   Keyboard: 200,
+//   Phone: 700
 // }
-
-// console.log(ans2);
-
-// output: [{hobby:"reading", users:[ { id: 1, name: "Amit",hobbies:["reading","playing"] }, { id: 3, name: "Amit2",hobbies:["reading","playing"] },  { id: 4, name: "Rahul",hobbies:["singing","reading"] }]}]
-
-const hobbies = [
-    {id:"1b451981-2f77-43e7-b9e1-8c4d5c3d69b0",hobby:"reading"},
-    {id:"ad490814-f1bf-46bb-a0cc-7b146ab0474b",hobby:"writing"},
-    {id:"01408e0a-9582-4fe2-be2d-3fae1197bc8a",hobby:"dancing"},
-    {id:"eba244e2-81f8-49ba-a2fa-9871581f7ddd",hobby:"singing"}
-]
-
-const users4 = [
-  { id: 1, name: "Amit",hobbies:["1b451981-2f77-43e7-b9e1-8c4d5c3d69b0","eba244e2-81f8-49ba-a2fa-9871581f7ddd"] },
-  { id: 2, name: "Neha",hobbies:["01408e0a-9582-4fe2-be2d-3fae1197bc8a","1b451981-2f77-43e7-b9e1-8c4d5c3d69b0"] },
-  { id: 3, name: "Amit2",hobbies:["eba244e2-81f8-49ba-a2fa-9871581f7ddd"] },  
-  { id: 4, name: "Rahul",hobbies:["ad490814-f1bf-46bb-a0cc-7b146ab0474b","01408e0a-9582-4fe2-be2d-3fae1197bc8a","1b451981-2f77-43e7-b9e1-8c4d5c3d69b0"] },
-  { id: 5, name: "Neha22",hobbies:["01408e0a-9582-4fe2-be2d-3fae1197bc8a","1b451981-2f77-43e7-b9e1-8c4d5c3d69b0"]}   
-];
-// const output = [ { id: 1, name: "Amit",hobbies:[{id:"1b451981-2f77-43e7-b9e1-8c4d5c3d69b0",hobby:"reading"}]},]
-// let m3=new Map()
-// let ans5=users4.reduce((acc,cur)=>{
-//     hobbies.forEach(x=>{
-//         cur.hobbies.
-//     })
-// })
-

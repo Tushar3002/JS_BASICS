@@ -249,7 +249,7 @@ const arr1 = [1,2,3,4,5,6];
 let [a,b,c,...rest] = arr1;
 console.log(rest);  // [4,5,6]
 
-const arr2 = [...arr1];  // copy array
+const arr2 = [...arr1];  // copy array//spread
 ```
 
 ---

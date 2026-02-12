@@ -13,24 +13,24 @@
 // ------------------------------------count values of an array
 
 
-// let arr =[1,2,3,4,"abcd",5.5]
+let arr =[1,2,3,4,"abcd",5.5]
 
-// let ans= arr.reduce((x,y)=>{
-//     return x+y
-// }) 
-// /// OR 
-// console.log(ans);
+let ans= arr.reduce((x,y)=>{
+    return Number.isFinite(y)?x+y:x
+},0) 
+
+console.log(ans);
 
 
 
-// let sum=0
-// arr.forEach((x)=>{
-//     if(Number.isFinite(x)){
-//         sum =sum +x
-//     }
-// })
+let sum=0
+arr.forEach((x)=>{
+    if(Number.isFinite(x)){
+        sum =sum +x
+    }
+})
 
-// console.log(sum);
+console.log(sum);
 
 
 //////  LOOP Through a array of objects

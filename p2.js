@@ -75,3 +75,5 @@ console.log(ans);
 let text = "ABCDEFG";
 const myA=Array.from(text);
 console.log(myA);
+
+
