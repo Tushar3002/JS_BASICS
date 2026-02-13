@@ -1,35 +1,35 @@
-// const users3 = [
-//   { id: 1, name: "Amit", hobbies: ["reading", "playing"] },
-//   { id: 2, name: "Neha", hobbies: ["dancing", "gaming"] },
-//   { id: 3, name: "Amit2", hobbies: ["reading", "playing"] }, // duplicate
-//   { id: 4, name: "Rahul", hobbies: ["singing", "reading"] },
-//   { id: 5, name: "Neha22", hobbies: ["dancing", "playing", "singing"] }, // duplicate
-// ];
+const users3 = [
+  { id: 1, name: "Amit", hobbies: ["reading", "playing"] },
+  { id: 2, name: "Neha", hobbies: ["dancing", "gaming"] },
+  { id: 3, name: "Amit2", hobbies: ["reading", "playing"] }, // duplicate
+  { id: 4, name: "Rahul", hobbies: ["singing", "reading"] },
+  { id: 5, name: "Neha22", hobbies: ["dancing", "playing", "singing"] }, // duplicate
+];
 
-// let s = new Set();
+let s = new Set();
 
-// users3.forEach((x) => {
-//   x.hobbies.forEach((y) => {
-//     s.add(y);
-//   });
-// });
-// let uniqueHobby = Array.from(s);
-// console.log(uniqueHobby);
+users3.forEach((x) => {
+  x.hobbies.forEach((y) => {
+    s.add(y);
+  });
+});
+let uniqueHobby = Array.from(s);
+console.log(uniqueHobby);
 
-// let ans2={};
+let ans2={};
 
-// for (let i of uniqueHobby) {
-//   ans2 = users3.reduce((acc, cur) => {
-//     if (!acc[i]) acc[i] = [];
+for (let i of uniqueHobby) {
+  ans2 = users3.reduce((acc, cur) => {
+    if (!acc[i]) acc[i] = [];
 
-//     if (cur.hobbies.includes(i)) {
-//       acc[i].push(cur);
-//     }
-//     return acc;
-//   }, ans2);
-// }
+    if (cur.hobbies.includes(i)) {
+      acc[i].push(cur);
+    }
+    return acc;
+  }, ans2);
+}
 
-// console.log(ans2);
+console.log(ans2);
 
 
 // //Count Users Per Hobby

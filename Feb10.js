@@ -277,7 +277,7 @@ console.log(uniq5);
 //   return acc;
 // }, {});
 
-// console.log(nameToGrade);
+// console.log(nameToGrade);  //{ Alice: 85, Bob: 92, Charlie: 78, David: 95, Eva: 88 }
 
 
 

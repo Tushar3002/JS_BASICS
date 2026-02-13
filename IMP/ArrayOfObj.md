@@ -57,6 +57,16 @@ const hobbyGroups = users3.reduce((map, u) => {
 }, new Map());
 
 console.log(hobbyGroups);
+
+
+//OP
+Map(5) {
+  'reading' => ['Amit', 'Amit2', 'Rahul'],
+  'playing' => ['Amit', 'Amit2', 'Neha22'],
+  'dancing' => ['Neha', 'Neha22'],
+  'gaming' => ['Neha'],
+  'singing' => ['Rahul', 'Neha22']
+}
 ```
 
 ---
@@ -68,6 +78,9 @@ const mostPopular = [...hobbyCount.entries()]
   .reduce((a, b) => (b[1] > a[1] ? b : a));
 
 console.log(mostPopular); // ["reading", 3]
+
+OP
+["reading", 3]
 ```
 
 ---
@@ -77,6 +90,11 @@ console.log(mostPopular); // ["reading", 3]
 ```js
 const multiHobbyUsers = users3.filter(u => u.hobbies.length > 2);
 console.log(multiHobbyUsers);
+
+[
+  { id: 5, name: "Neha22", hobbies: ["dancing", "playing", "singing"] }
+]
+
 ```
 
 ---
@@ -92,6 +110,15 @@ const uniqueUsers = users3.filter(u => {
   return true;
 });
 console.log(uniqueUsers);
+
+OP
+[
+  { id: 1, name: "Amit", hobbies: ["reading", "playing"] },
+  { id: 2, name: "Neha", hobbies: ["dancing", "gaming"] },
+  { id: 4, name: "Rahul", hobbies: ["singing", "reading"] },
+  { id: 5, name: "Neha22", hobbies: ["dancing", "playing", "singing"] }
+]
+
 ```
 
 ---
@@ -107,6 +134,9 @@ const sharedUsers = users3
   .map(u => u.name);
 
 console.log(sharedUsers); // ["Neha", "Amit", "Amit2", "Rahul"]
+
+["Amit", "Neha", "Amit2", "Rahul"]
+
 ```
 
 ---
@@ -120,6 +150,16 @@ const hobbyMap = users3.reduce((map, u) => {
 }, new Map());
 
 console.log(hobbyMap);
+
+OP
+Map(5) {
+  'reading' => 3,
+  'playing' => 3,
+  'dancing' => 2,
+  'gaming' => 1,
+  'singing' => 2
+}
+
 ```
 
 ---
@@ -136,6 +176,16 @@ users3.forEach(u => {
 });
 
 console.log(similarUsers);
+
+OP
+Map(5) {
+  'Amit' => ['Amit2', 'Rahul', 'Neha22'],
+  'Neha' => ['Neha22'],
+  'Amit2' => ['Amit', 'Rahul', 'Neha22'],
+  'Rahul' => ['Amit', 'Amit2', 'Neha22'],
+  'Neha22' => ['Amit', 'Neha', 'Amit2', 'Rahul']
+}
+
 ```
 
 ---
@@ -153,6 +203,17 @@ const sortedHobbyUsers = users3.reduce((map, u) => {
 }, new Map());
 
 console.log(sortedHobbyUsers);
+
+OP
+
+Map(5) {
+  'reading' => ['Amit', 'Amit2', 'Rahul'],
+  'playing' => ['Amit', 'Amit2', 'Neha22'],
+  'dancing' => ['Neha', 'Neha22'],
+  'gaming' => ['Neha'],
+  'singing' => ['Neha22', 'Rahul']
+}
+
 ```
 
 ---
@@ -163,6 +224,10 @@ console.log(sortedHobbyUsers);
 const hobby = "reading";
 const usersWithHobby = users3.filter(u => new Set(u.hobbies).has(hobby));
 console.log(usersWithHobby.map(u => u.name)); // ["Amit", "Amit2", "Rahul"]
+
+OP 
+["Amit", "Amit2", "Rahul"]
+
 ```
 
 ---
@@ -176,6 +241,10 @@ const allHobbies = users3.reduce((set, u) => {
 }, new Set());
 
 console.log([...allHobbies]);
+
+OP
+["reading", "playing", "dancing", "gaming", "singing"]
+
 ```
 
 ---

@@ -9,14 +9,14 @@
 
 // ////
 
-// const users = [
-//   { id: 1, name: "Aman", age: 25, gender: "male", salary: 50000, active: true },
-//   { id: 2, name: "Sara", age: 30, gender: "female", salary: 80000, active: false },
-//   { id: 3, name: "John", age: 22, gender: "male", salary: 30000, active: true },
-//   { id: 4, name: "Priya", age: 27, gender: "female", salary: 90000, active: true },
-//   { id: 5, name: "Mike", age: 35, gender: "male", salary: 120000, active: false },
-//   { id: 6, name: "Nina", age: 29, gender: "female", salary: 70000, active: true }
-// ];
+const users = [
+  { id: 1, name: "Aman", age: 25, gender: "male", salary: 50000, active: true },
+  { id: 2, name: "Sara", age: 30, gender: "female", salary: 80000, active: false },
+  { id: 3, name: "John", age: 22, gender: "male", salary: 30000, active: true },
+  { id: 4, name: "Priya", age: 27, gender: "female", salary: 90000, active: true },
+  { id: 5, name: "Mike", age: 35, gender: "male", salary: 120000, active: false },
+  { id: 6, name: "Nina", age: 29, gender: "female", salary: 70000, active: true }
+];
 
 
 // // 1. Get all active female users
@@ -102,34 +102,34 @@
 // console.log(ans);
 
 
-// const orders = [
-//   { id: 1, userId: 1, total: 500 },
-//   { id: 2, userId: 2, total: 700 },
-//   { id: 3, userId: 1, total: 300 },
-//   { id: 4, userId: 3, total: 1000 },
-// ];
+const orders = [
+  { id: 1, userId: 1, total: 500 },
+  { id: 2, userId: 2, total: 700 },
+  { id: 3, userId: 1, total: 300 },
+  { id: 4, userId: 3, total: 1000 },
+];
 
-// // 9. Total amount spent by userId = 1
-// ans=orders.reduce((acc,cur)=>{
-//     return cur.userId===1?acc+cur.total:acc
-// },0)
+// 9. Total amount spent by userId = 1
+ans=orders.reduce((acc,cur)=>{
+    return cur.userId===1?acc+cur.total:acc
+},0)
 
-// console.log(ans);
+console.log(ans);
 
-// //10. Combine users + orders → show each user with totalSpent
+//10. Combine users + orders → show each user with totalSpent
 
-// ans=users.map(x=>{
-//     const totalSpent=orders.reduce((acc,cur)=>{
-//         return cur.userId===x.id?acc+cur.total:acc
-//     },0)
+ans=users.map(x=>{
+    const totalSpent=orders.reduce((acc,cur)=>{
+        return cur.userId===x.id?acc+cur.total:acc
+    },0)
 
-//     return{
-//         User: x.name,
-//         TotalSpent:totalSpent
-//     }
-// })
+    return{
+        User: x.name,
+        TotalSpent:totalSpent
+    }
+})
 
-// console.log(ans);
+console.log(ans);
 
 
 //--------------------------------------------------------------------------------------------------------------------------------------
