@@ -111,7 +111,9 @@ const users4 = [
 // const hobbyMap = new Map();
 // hobbies.forEach(h => hobbyMap.set(h.id, h.hobby));
 const myMap = hobbies.map((x) => [x.id, x.hobby]);
-// console.log(myMap);
+console.log("-------------------------------------------------------");
+
+console.log(myMap);
 
 const m = new Map(myMap);
 console.log(m);
@@ -144,11 +146,8 @@ console.log(uniqVal);
 
 ans=usersWithNames.reduce((acc,cur)=>{
     uniqVal.forEach(x=>{
-
-        
         if(!acc[x]) acc[x]=[]
         if(cur.hobbies.includes(x)) {
-
             acc[x].push(cur.name)
         }
     })
@@ -168,7 +167,6 @@ let countHob=usersWithNames.reduce((acc,cur)=>{
     })
     return acc
 },{})
-
 
 console.log(countHob);
 

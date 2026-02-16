@@ -7,7 +7,7 @@
 // }
 // console.log(text)///
 
-// ////
+//
 
 const users = [
   { id: 1, name: "Aman", age: 25, gender: "male", salary: 50000, active: true },

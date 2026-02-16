@@ -6,62 +6,62 @@ const users = [
   { id: 2, name: "Neha" }    // duplicate
 ];
 
-const uniq=users.filter((val,index)=>{
-   return users.findIndex(u=>u.id===val.id)===index;
-})
+// const uniq=users.filter((val,index)=>{
+//    return users.findIndex(u=>u.id===val.id)===index;
+// })
 
-console.log(uniq);
+// console.log(uniq);
 
-//SET
-
-
-const s= new Set()
-
-const uniq2=users.filter((val,index)=>{
-    if(s.has(val.id)) return false
-    s.add(val.id)
-    return true
-})
-
-console.log(uniq2);
-
-//Map
-const m=new Map()
-const uniq3=users.filter((val,index)=>{
-    if(m.has(val.id)){
-        return false
-    }
-    m.set(val.id,val.name)
-    return true
-})
-console.log(uniq3);
+// //SET
 
 
-////////////////
-const seen = new Set();
-const uniq4 = [];
+// const s= new Set()
 
-for (const user of users) {
-  if (!seen.has(user.id)) {
-    seen.add(user.id);
-    uniq4.push(user);
-  }
-}
-console.log(uniq4);
+// const uniq2=users.filter((val,index)=>{
+//     if(s.has(val.id)) return false
+//     s.add(val.id)
+//     return true
+// })
+
+// console.log(uniq2);
+
+// //Map
+// const m=new Map()
+// const uniq3=users.filter((val,index)=>{
+//     if(m.has(val.id)){
+//         return false
+//     }
+//     m.set(val.id,val.name)
+//     return true
+// })
+// console.log(uniq3);
+
+
+// ////////////////
+// const seen = new Set();
+// const uniq4 = [];
+
+// for (const user of users) {
+//   if (!seen.has(user.id)) {
+//     seen.add(user.id);
+//     uniq4.push(user);
+//   }
+// }
+// console.log(uniq4);
 
 
 
-//////////
+// //////////
 
-const map = new Map();
+// const map = new Map();
 
-for (const user of users) {
-  map.set(user.id, user); // overwrites previous
-}
-console.log(map);
+// for (const user of users) {
+//   map.set(user.id, user); // overwrites previous
+// }
+// console.log(map);
 
-const uniq5 = Array.from(map.values());
-console.log(uniq5);
+// const uniq5 = Array.from(map.values());
+// console.log(uniq5);
 
 
 // //------------------------------------------------------------------------------------------
@@ -102,7 +102,6 @@ console.log(uniq5);
 //     }else{
 //         map2.set(x.id,1)
 //     }
-
 // })
 // console.log(map2);
 
@@ -609,49 +608,49 @@ console.log(uniq5);
 // console.log(fDup);
 
 
-// // 5️⃣ Cars Array
-const cars = [
-  { id: 1, brand: "Toyota", model: "Camry", year: 2018 },
-  { id: 2, brand: "Honda", model: "Civic", year: 2020 },
-  { id: 3, brand: "Toyota", model: "Corolla", year: 2019 },
-  { id: 1, brand: "Toyota", model: "Camry", year: 2018 },
-  { id: 4, brand: "Ford", model: "Mustang", year: 2021 }
-];
+// // // 5️⃣ Cars Array
+// const cars = [
+//   { id: 1, brand: "Toyota", model: "Camry", year: 2018 },
+//   { id: 2, brand: "Honda", model: "Civic", year: 2020 },
+//   { id: 3, brand: "Toyota", model: "Corolla", year: 2019 },
+//   { id: 1, brand: "Toyota", model: "Camry", year: 2018 },
+//   { id: 4, brand: "Ford", model: "Mustang", year: 2021 }
+// ];
 
-// Find unique cars by id.
+// // Find unique cars by id.
 
-ans=cars.filter((val,index)=>{
-    return cars.findIndex(v=>v.id===val.id)===index
-})
+// ans=cars.filter((val,index)=>{
+//     return cars.findIndex(v=>v.id===val.id)===index
+// })
 
-console.log(ans);
+// console.log(ans);
 
 
-// Group cars by brand.
+// // Group cars by brand.
 
-ans=cars.reduce((acc,cur)=>{
-    if(!acc[cur.brand]) acc[cur.brand]=[]
-    acc[cur.brand].push(cur)
-    return acc
-},{})
-console.log(ans);
+// ans=cars.reduce((acc,cur)=>{
+//     if(!acc[cur.brand]) acc[cur.brand]=[]
+//     acc[cur.brand].push(cur)
+//     return acc
+// },{})
+// console.log(ans);
 
-// Find the newest car.
+// // Find the newest car.
 
-ans=cars.reduce((acc,cur)=>{
-    return cur.year>acc.year?cur:acc
+// ans=cars.reduce((acc,cur)=>{
+//     return cur.year>acc.year?cur:acc
 
-})
+// })
 
-console.log(ans);
+// console.log(ans);
 
-// Count how many cars per brand.
+// // Count how many cars per brand.
 
-ans=cars.reduce((acc,cur)=>{
-    acc[cur.brand]=(acc[cur.brand]||0)+1
-    return acc
-},{})
+// ans=cars.reduce((acc,cur)=>{
+//     acc[cur.brand]=(acc[cur.brand]||0)+1
+//     return acc
+// },{})
 
-console.log(ans);
+// console.log(ans);
 
 
