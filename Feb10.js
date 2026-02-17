@@ -166,10 +166,10 @@ const users = [
 //===================
 
 // const result = users.reduce((acc, cur) => {
-//     // 1️⃣ count frequencies
+
 //     acc.freq[cur.id] = (acc.freq[cur.id] || 0) + 1;
 
-//     // 2️⃣ check if current user is the most repeated  
+
 //     if (acc.freq[cur.id] > acc.maxCount) {
 //         acc.maxCount = acc.freq[cur.id];
 //         acc.mostRepeatedUser = cur;
@@ -313,7 +313,13 @@ const users = [
 // console.log(ans);
 
 
-// // Count how many books by each author
+// // // Count how many books by each author
+// const books = [
+//   { id: 1, title: "1984", author: "George Orwell", year: 1949 },
+//   { id: 2, title: "Sapiens", author: "Yuval Noah Harari", year: 2011 },
+//   { id: 3, title: "The Alchemist", author: "Paulo Coelho", year: 1988 },
+//   { id: 4, title: "Brave New World", author: "Aldous Huxley", year: 1932 }
+// ];
 // const m2=new Map()
 // for(let i of books){
 //     if(m2.has(i.author)){
@@ -324,6 +330,12 @@ const users = [
 // }
 // console.log(m2);
 
+// let ans=books.reduce((acc,cur)=>{
+//   acc[cur.author]=(acc[cur.author]||0)+1
+//   return acc
+// },{})
+// console.log(ans);
+
 // //  Orders Array
 // const orders = [
 //   { orderId: 101, customer: "Alice", amount: 250, status: "Delivered" },
@@ -331,6 +343,22 @@ const users = [
 //   { orderId: 103, customer: "Alice", amount: 150, status: "Delivered" },
 //   { orderId: 104, customer: "Charlie", amount: 300, status: "Cancelled" }
 // ];
+// const m33=new Map()
+// for(let i of orders){
+//   console.log(i.customer);
+  
+//   console.log(i.amount);
+//   console.log(m33.get(i.customer));
+  
+  
+//   if(m33.has(i.customer)){
+//     m33.set(i.customer,m33.get(i.customer)+i.amount)
+
+//   }else{
+//     m33.set(i.customer,i.amount)
+//   }
+// }
+// console.log(m33);
 
 // // // Total amount spent by each customer
 
@@ -469,27 +497,27 @@ const users = [
 
 
 // // 2️⃣ Inventory Array
-// const inventory = [
-//   { sku: "A101", name: "Chair", quantity: 10 },
-//   { sku: "A102", name: "Table", quantity: 5 },
-//   { sku: "A101", name: "Chair", quantity: 8 },
-//   { sku: "A103", name: "Lamp", quantity: 15 }
-// ];
+const inventory = [
+  { sku: "A101", name: "Chair", quantity: 10 },
+  { sku: "A102", name: "Table", quantity: 5 },
+  { sku: "A101", name: "Chair", quantity: 8 },
+  { sku: "A103", name: "Lamp", quantity: 15 }
+];
 
-// // Merge items with the same SKU, summing their quantities.
+// Merge items with the same SKU, summing their quantities.
 
-// const mergedInventory = Object.values(
-//   inventory.reduce((acc, item) => {
-//     if (acc[item.sku]) {
-//       acc[item.sku].quantity += item.quantity;
-//     } else {
-//       acc[item.sku] = { ...item };
-//     }
-//     return acc;
-//   }, {})
-// );
+const mergedInventory = 
+  inventory.reduce((acc, item) => {
+    if (acc[item.sku]) {
+      acc[item.sku].quantity += item.quantity;
+    } else {
+      acc[item.sku] = { ...item };
+    }
+    return acc;
+  }, {})
 
-// console.log(mergedInventory);
+
+console.log(mergedInventory);
 
 
 // // Find items with quantity < 10.
