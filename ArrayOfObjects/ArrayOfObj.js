@@ -188,7 +188,7 @@ let mostLiked=posts.reduce((acc,cur)=>{
 let likedUser=users.find(x=>{
     return x.id === mostLiked.userId
 })
-// console.log(likedUser);
+console.log(likedUser);
 
 // Suggest people to follow (mutual followers logic)
 

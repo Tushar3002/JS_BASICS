@@ -99,7 +99,7 @@ const sharedProjects = employees.reduce((acc, emp) => {
 
 }, {});
 
-console.log(sharedProjects);
+// console.log(sharedProjects);
 // const projects = [
 //   { id: "p1", name: "Website Redesign" },
 //   { id: "p2", name: "Mobile App" },
@@ -122,3 +122,45 @@ console.log(sharedProjects);
 //   David: [ 'Alice' ],
 //   Eva: [ 'Alice', 'Bob', 'Charlie' ]
 // }
+
+
+let arr3=[4,5,2]
+
+// logic : 452 + 1 =  453
+
+// output : [4,5,3]
+
+let ans3=arr3.join("") 
+ans3=Number(ans3)+1
+ans3=ans3.toString().split("")
+console.log(ans3);
+
+let arr4=[{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{}]
+// [[{},{},{},{},{},{},{},],[{},{},{},{},{},{},{},]...]
+
+// let len=arr4.length
+// console.log(len);
+// let val=0
+// let ans4=arr4.reduce((acc,cur)=>{
+//     let i
+//     for( i=val;i<len;i++){
+//         if(!acc[i]) acc[i]=[]
+//         acc[i].push(cur)
+//     }
+//     val=i
+// },{})
+
+// for(let i=)
+let emptyArr=[]
+let len=arr4.length
+for(let i=0;i<len;i+3){
+    emptyArr.push(arr4[i])
+    // console.log(arr4[i]);
+    
+}
+console.log(emptyArr);
+
+
+// console.log(Number(0.1)+Number(0.2)===Number(0.3));
+
+// console.log(ans4);

@@ -29,6 +29,15 @@ for (let i of uniqueHobby) {
   }, ans2);
 }
 
+// ans=users3.reduce((acc,cur)=>{
+//   cur.hobbies.forEach(x=>{
+//     if(!acc[x]) acc[x]=[]
+//     acc[x].push(cur)
+//   })
+//   return acc
+// },{})
+// console.log(ans2);
+
 
 
 
@@ -60,18 +69,7 @@ for (let i of uniqueHobby) {
 // console.log("--------------------------------------------------------------------------------------");
 
 
-// let ans33=users3.reduce((acc,cur)=>{
 
-//         for (let i = 0; i < uniqueHobby.length; i++) {
-//             if(!acc[uniqueHobby[i]]) acc[uniqueHobby[i]]=[]
-//             if(cur.hobbies.includes(i)){
-//                 acc[uniqueHobby[i]].push(cur)
-//             }
-//         }
-//         return acc
-
-//     },{})
-//     console.log(ans33);
 // let ans2 = users3.reduce((acc, user) => { //correct but not mine
 //   user.hobbies.forEach(hobby => {
 //     if (!acc[hobby]) acc[hobby] = [];
@@ -81,32 +79,32 @@ for (let i of uniqueHobby) {
 // }, {});
 //     console.log("--------------------------------------------------------------------------------------");
 
-let ans9=users3.reduce((acc,cur)=>{
-        cur.hobbies.forEach(x=>{
-            if(!acc[x]) acc[x]=[]
+// let ans9=users3.reduce((acc,cur)=>{
+//         cur.hobbies.forEach(x=>{
+//             if(!acc[x]) acc[x]=[]
 
-        acc[x].push(cur)
+//         acc[x].push(cur)
 
-        })
-        return acc
-    },{})
+//         })
+//         return acc
+//     },{})
 // console.log(ans9);
 
-// ans2=uniqueHobby.map((x,i)=>{
-//     console.log(x);
+// // ans2=uniqueHobby.map((x,i)=>{
+// //     console.log(x);
 
-//     let val=users3.reduce((acc,cur)=>{
+// //     let val=users3.reduce((acc,cur)=>{
 
-//         if(!acc[x]) acc[x]=[]
-//         if(cur.hobbies.includes(x)){
-//             acc[x].push(cur)
-//         }
-//     })
-//     return{
-//         hobby:x,
-//         users:acc[x]
-//     }
-// })
+// //         if(!acc[x]) acc[x]=[]
+// //         if(cur.hobbies.includes(x)){
+// //             acc[x].push(cur)
+// //         }
+// //     })
+// //     return{
+// //         hobby:x,
+// //         users:acc[x]
+// //     }
+// // })
 
 const hobbies = [
   { id: "1b451981-2f77-43e7-b9e1-8c4d5c3d69b0", hobby: "reading" },
@@ -191,12 +189,13 @@ const ans10 = users4.map((x, i) => {
 
 console.log(ans10);
 
-/*
-[
-  { id: 1, name: 'Amit', hobbies: [ [Object], [Object] ] },
-  { id: 2, name: 'Neha', hobbies: [ [Object], [Object] ] },
-  { id: 3, name: 'Amit2', hobbies: [ [Object] ] },
-  { id: 4, name: 'Rahul', hobbies: [ [Object], [Object], [Object] ] },
-  { id: 5, name: 'Neha22', hobbies: [ [Object], [Object] ] }
-]
-  */
+// /*
+// [
+//   { id: 1, name: 'Amit', hobbies: [ [Object], [Object] ] },
+//   { id: 2, name: 'Neha', hobbies: [ [Object], [Object] ] },
+//   { id: 3, name: 'Amit2', hobbies: [ [Object] ] },
+//   { id: 4, name: 'Rahul', hobbies: [ [Object], [Object], [Object] ] },
+//   { id: 5, name: 'Neha22', hobbies: [ [Object], [Object] ] }
+// ]
+//   */
+

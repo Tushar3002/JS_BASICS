@@ -12,7 +12,7 @@ It allows you to create, manipulate, and format dates and times.
 ```javascript
 const now = new Date();
 console.log(now); // e.g., 2026-02-05T14:30:00.000Z
-````
+```
 
 ### 2. Using a Date String
 

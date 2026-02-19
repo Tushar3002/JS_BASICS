@@ -103,7 +103,14 @@ const users = [
 //         map2.set(x.id,1)
 //     }
 // })
-// console.log(map2);
+// console.log(map2);//Map(3) { 1 => 2, 2 => 2, 3 => 1 }
+
+// let val=users.reduce((acc,cur)=>{
+//   acc[cur.id] = (acc[cur.id]||0)+1
+//   return acc
+// },{})
+
+// console.log(val);//{ '1': 2, '2': 2, '3': 1 }
 
 
 //Find the first duplicate user

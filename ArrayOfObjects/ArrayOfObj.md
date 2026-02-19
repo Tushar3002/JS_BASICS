@@ -33,7 +33,9 @@ console.log(merged);
   { id: 1, name: 'TJ', price: 1000 },
   { id: 2, name: 'Tushar', price: 3000 }
 ]
+
 ------------
+
 const orders = [
     { id: 1, customer: "Alice", items: 3, total: 150 },
     { id: 2, customer: "Bob", items: 5, total: 300 },
