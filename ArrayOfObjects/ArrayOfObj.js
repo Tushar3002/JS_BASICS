@@ -520,3 +520,28 @@ let str="hello everyone"
 
 let ans1=str.split(" ").map(x=>x[0].toUpperCase()+x.slice(1)).join(" ")
 console.log(ans1);
+function getAllReplies(comments) {
+    let result = [];
+
+    function extractReplies(replyArray) {
+        for (let reply of replyArray) {
+            result.push(reply);
+
+            if (reply.replies && reply.replies.length > 0) {
+                extractReplies(reply.replies); // recursion
+            }
+        }
+    }
+
+    for (let comment of comments) {
+        if (comment.replies && comment.replies.length > 0) {
+            extractReplies(comment.replies);
+        }
+    }
+
+    return result;
+}
+
+let allReplies = getAllReplies(obj);
+
+console.log(allReplies);

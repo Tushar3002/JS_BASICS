@@ -135,7 +135,7 @@ ans3=Number(ans3)+1
 ans3=ans3.toString().split("")
 console.log(ans3);
 
-let arr4=[{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{}]
+let arr4=[{},{},{},{},{},{},{},{},{},{},{},{},{},{}]
 // [[{},{},{},{},{},{},{},],[{},{},{},{},{},{},{},]...]
 
 // let len=arr4.length
@@ -151,10 +151,17 @@ let arr4=[{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{}]
 // },{})
 
 // for(let i=)
+// let emptyArr=[]
+// let len=arr4.length
+// for(let i=0;i<len;i+=3){
+//     emptyArr.push(arr4[i])
+//     // console.log(arr4[i]);
+    
+// }
 let emptyArr=[]
 let len=arr4.length
-for(let i=0;i<len;i+3){
-    emptyArr.push(arr4[i])
+for(let i=0;i<len;i+=3){
+    emptyArr.push(arr4.slice(i,i+3))
     // console.log(arr4[i]);
     
 }
