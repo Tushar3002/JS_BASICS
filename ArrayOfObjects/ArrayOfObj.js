@@ -188,7 +188,7 @@ let mostLiked=posts.reduce((acc,cur)=>{
 let likedUser=users.find(x=>{
     return x.id === mostLiked.userId
 })
-console.log(likedUser);
+// console.log(likedUser);
 
 // Suggest people to follow (mutual followers logic)
 
@@ -516,10 +516,10 @@ console.log(membersWithCommonBooks(members));
 
 // 7. Capitalize first letter of every word
 
-let str="hello everyone"
+// let str="hello everyone"
 
-let ans1=str.split(" ").map(x=>x[0].toUpperCase()+x.slice(1)).join(" ")
-console.log(ans1);
+// let ans1=str.split(" ").map(x=>x[0].toUpperCase()+x.slice(1)).join(" ")
+// console.log(ans1);
 function getAllReplies(comments) {
     let result = [];
 

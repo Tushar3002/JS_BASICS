@@ -1,3 +1,13 @@
+
+let brac=[{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{}]
+let emp=[]
+
+for(let i=0;i<brac.length;i+=3){
+    emp.push(brac.slice(i,i+3))
+}
+
+console.log(emp);
+
 let obj=[
     {
         "commentId": "3fe8bdf0-8a7a-4846-a699-9dbca5a40653",
@@ -233,219 +243,100 @@ let obj=[
     }
 ]
 
+let ans=obj.map(x=>{
+    return {
+        ...x,
+        replies:x.replies.flat(Infinity)
+    }
+})
+// console.log(ans);
+
+function getNestedReplies(obj){
+
+}
+// getNestedReplies(obj)
 
 // function getAllReplies(comments) {
 //     let result = [];
+
+//         for (let comment of comments) {
+//         result.push(comment)
+//         if (comment.replies && comment.replies.length > 0) {
+            
+//             extractReplies(comment.replies);
+//         }
+//     }
 
 //     function extractReplies(replyArray) {
 //         for (let reply of replyArray) {
 //             result.push(reply);
 
 //             if (reply.replies && reply.replies.length > 0) {
-//                 extractReplies(reply.replies); // recursion
+//                 extractReplies(reply.replies);
 //             }
 //         }
 //     }
-
-//     for (let comment of comments) {
-//         if (comment.replies && comment.replies.length > 0) {
-//             extractReplies(comment.replies);
-//         }
-//     }
-
 //     return result;
 // }
 
 // let allReplies = getAllReplies(obj);
 
 // console.log(allReplies);
+// function flattenRepliesInside(comments) {
 
-function practice(obj){
-    function nestedReplies(comment,arr){
-        for(let i of comment){
-            arr.push(i)
-            if(i.replies && i.replies.length>0){
-                nestedReplies(i.replies,arr)
-            }
-        }
-    }
-    return obj.map(comments=>{
-        let arr=[]
-        if(comments.replies && comments.replies.length>0){
-            nestedReplies(comments.replies,arr)
-        }
-        return{
-            ...comments,
-            replies:arr
-        }
-    })
-}
-console.log(practice(obj));
+//     function collectReplies(replyArray, result) {
+//         for (let reply of replyArray) {
+//             result.push(reply);
 
-
-// let ans=obj.map(x=>{
-//     return {
-//         ...x,
-//         replies:x.replies.flatMap(y=>y.replies)
-//     }
-// })
-// console.log(ans);
-
-
-// Recursion
-
-// function  factorial(n){
-//     if (n<=0) return 0
-//     if (n==1) return 1
-//     return n*factorial(n-1)
-// }
-// // console.log(factorial(5));
-
-
-// //Sum of First N Numbers
-// function Sum(n){
-//     if(n==0) return 0
-
-//     return n+Sum(n-1)
-// }
-// console.log(Sum(10));
-
-
-// //Reverse a String
-
-// function rev(str){
-//     if (str.length <= 1) return str
-//     console.log(str[0]);
-    
-//     return rev(str.slice(1)) + str[0]
-// }
-// console.log(rev("Tushar"));
-
-// //4️⃣ Power Function
-
-// function power(p,e){
-//     if (e==1) return p
-//     return p*power(p,e-1)
-// }
-
-// console.log(power(2,4));
-
-// // Fibonacci
-
-// function fibo(n){
-//     if (n <= 1) return n
-//     return fibo(n - 1) + fibo(n - 2)
-// }
-// console.log(fibo(6));
-
-// function fibSeries(n, a = 0, b = 1){
-//     if (n == 0) return
-//     console.log(a)
-//     fibSeries(n - 1, b, a + b)
-// }
-
-
-
-// fibSeries(6)
-
-// function fibo1(n,a=0,b=1){
-//     // if(n===n) return 
-//     if (n==0) return
-//     console.log(b);
-    
-//     return fibo1(n-1,b,a+b)
-// }
-// fibo1(6)
-
-// //6️⃣ Check Palindrome
-
-// function isPalindrome(str){
-//     if (str.length <= 1) return true
-//     if (str[0] !== str[str.length - 1]) return false
-//     return isPalindrome(str.slice(1, -1))
-// }
-
-// console.log(isPalindrome("madam"));
-
-// //Sum of Digits
-
-// function DigitSum(n){
-//     if (n == 0) return 0
-//     return (n % 10) + DigitSum(Math.floor(n / 10))
-// }
-
-// console.log(DigitSum(1234));
-
-
-// // 8️⃣ Count Occurrences in Array
-// // count([1,2,3,2,2], 2) → 3
-
-// function count(arr, target, index = 0){
-//     if (index == arr.length) return 0
-//     return (arr[index] == target ? 1 : 0) + count(arr, target, index + 1)
-// }
-
-// console.log(count([1,2,3,2,2], 2));
-
-
-
-// // 🔟 Binary Search (Recursive)
-// // binarySearch([1,2,3,4,5], 4) → 3
-
-// function binarySearch(arr, target, left = 0, right = arr.length - 1){
-//     if (left > right) return -1
-
-//     let mid = Math.floor((left + right) / 2)
-
-//     if (arr[mid] == target) return mid
-//     if (target < arr[mid])
-//         return binarySearch(arr, target, left, mid - 1)
-//     else
-//         return binarySearch(arr, target, mid + 1, right)
-// }
-
-// console.log(binarySearch([1,2,3,4,5], 4))
-
-// 1️⃣1️⃣ Generate All Subsets (Power Set)
-// subsets([1,2])
-// → [[], [1], [2], [1,2]]
-
-// function subsets(arr, index = 0, current = [], result = []){
-//     if (index == arr.length){
-//         result.push([...current])
-//         return result
+//             if (reply.replies && reply.replies.length > 0) {
+//                 collectReplies(reply.replies, result);
+//             }
+//         }
 //     }
 
-//     // Exclude
-//     subsets(arr, index + 1, current, result)
+//     return comments.map(comment => {
 
-//     // Include
-//     current.push(arr[index])
-//     subsets(arr, index + 1, current, result)
-//     current.pop()
+//         let allReplies = [];
 
-//     return result
+//         if (comment.replies && comment.replies.length > 0) {
+//             collectReplies(comment.replies, allReplies);
+//         }
+
+//         return {
+//             ...comment,
+//             replies: {
+                
+//                 allReplies: allReplies  
+//             }
+//         };
+//     });
 // }
 
-// console.log(subsets([1,2]))
-
-// 1️⃣2️⃣ Permutations of Array
-// permute([1,2])
-// → [[1,2], [2,1]]
+// console.log(flattenRepliesInside(obj));
 
 
+// function practice(obj){
+//     function nestedReplies(arr,nested){
+//             for(let i of nested){
+//                 arr.push(i)
 
-// 🔴 Level 4 – Brain Burners
-// 1️⃣3️⃣ Solve Tower of Hanoi
-
-// Print steps.
-
-// 1️⃣4️⃣ Word Break Problem
-
-// Check if string can be segmented using dictionary.
-
-// 1️⃣5️⃣ N-Queens
-
-// Return valid board configurations.
+//                 if(i.replies && i.replies.length>0){
+//                     nestedReplies(arr,i.replies)
+//                 }
+//             }
+//         }
+//     return obj.map(comment=>{
+        
+//         let arr=[]
+//         if(comment.replies && comment.replies.length>0){
+//             nestedReplies(arr,comment.replies)
+//         }
+//         return{
+//             ...comment,
+//             replies:arr
+//         }
+//     })
+// }
+// console.log(practice(obj));
 
 
