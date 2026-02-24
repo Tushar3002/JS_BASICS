@@ -8,6 +8,10 @@ for(let i=0;i<brac.length;i+=3){
 
 console.log(emp);
 
+
+
+
+
 let obj=[
     {
         "commentId": "3fe8bdf0-8a7a-4846-a699-9dbca5a40653",
@@ -243,17 +247,60 @@ let obj=[
     }
 ]
 
-let ans=obj.map(x=>{
-    return {
-        ...x,
-        replies:x.replies.flat(Infinity)
+function practice(obj){
+    function nestedReplies(reply,arr){
+        for(let i of reply){
+            arr.push(i)
+            if(i.replies && i.replies.length>0){
+                nestedReplies(i.replies,arr)
+            }
+        }
     }
-})
-// console.log(ans);
-
-function getNestedReplies(obj){
-
+    return obj.map(comments=>{
+        let arr=[]
+        if(comments.replies && comments.replies.length>0){
+            nestedReplies(comments.replies,arr)
+        }
+        return{
+            ...comments,    
+            replies:arr
+        }
+    })
 }
+console.log(practice(obj));
+
+
+// let ans=obj.map(x=>{
+//     return {
+//         ...x,
+//         replies:x.replies.flat(Infinity)
+//     }
+// })
+// // console.log(ans);
+
+
+function p1(obj){
+    function nestedReplies(arr,nested){
+        for(let i of nested){
+            arr.push(i)
+            if(i.replies && i.replies.length>0){
+                nestedReplies(arr,i.replies)
+            }
+        }
+    }
+    return obj.map(comment=>{
+        let arr=[]
+        if(comment.replies && comment.replies.length>0){
+            nestedReplies(arr,comment.replies)
+        }
+        return{
+            ...comment,
+            replies:arr
+        }
+    })
+}
+console.log(p1(obj));
+
 // getNestedReplies(obj)
 
 // function getAllReplies(comments) {
@@ -340,3 +387,26 @@ function getNestedReplies(obj){
 // console.log(practice(obj));
 
 
+function practice3(obj){
+    function nestedReplies(arr,nested){
+        for(let i of nested){
+            arr.push(i)
+            if(i.replies && i.replies.length>0){
+                nestedReplies(arr,i.replies)
+        }
+        }
+    }
+    return obj.map(x=>{
+        let arr=[]
+        if(x.replies && x.replies.length>0){
+            nestedReplies(arr,x.replies)
+        }
+        return{
+            ...x,
+            replies:arr
+        }
+    })
+}
+console.log("Hello");
+
+console.log(practice3(obj));

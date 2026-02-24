@@ -32,7 +32,7 @@ let p1=employees.map(x=>{
 // Group employees by project.
 
 let uniqProj=Array.from(m.values())
-// console.log(uniqProj);
+console.log(uniqProj);
 
 let grpEmp=p1.reduce((acc,cur)=>{
     uniqProj.forEach(x=>{   // cur.projects.forEach(proj => {
