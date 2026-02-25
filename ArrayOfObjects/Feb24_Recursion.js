@@ -8,6 +8,8 @@ const data = {
   },
   f: 15
 };
+// console.log(Object.entries(data));
+
 
 // function sum2(data){ ----WRONG
 //     let s=0
@@ -93,7 +95,6 @@ function count(obj){
         }
     }
     return cnt
-
 }
 
 
@@ -646,7 +647,7 @@ let data5 = {
 //       cnt += 1;
 //     }
 
-//     // Recurse if it's an object (array included)
+
 //     if (typeof data[i] === "object" && data[i] !== null) {
 //       cnt += countSpecOcc(data[i], target);
 //     }
@@ -658,12 +659,11 @@ function countSpecKey(data, targetKey) {
   let cnt = 0;
 
   for (let key of Object.keys(data)) {
-    // Count key match
+
     if (key === targetKey) {
       cnt++;
     }
 
-    // Recurse into objects
     if (typeof data[key] === "object" && data[key] !== null) {
       cnt += countSpecKey(data[key], targetKey);
     }
@@ -672,7 +672,9 @@ function countSpecKey(data, targetKey) {
   return cnt;
 }
 
-console.log(countSpecKey(data5, 'a')); // ✅ Output: 3
+console.log(countSpecKey(data5, 'a'));
 
 
 console.log(Object.keys(data5));
+
+
